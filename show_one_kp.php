@@ -28,7 +28,7 @@ if (($arr[0]['InnCustomer'] == '0') or ($arr[0]['InnCustomer'] = '')) {
     $smarty->display('razdelitel.tpl');
 
     $smarty->display('main_table.tpl');
-    $smarty->display('modal_windows_inn_comp.tpl');
+
 
       // Ищем дополнительные КП к выбранному
       if ($id <> "") {
@@ -54,5 +54,6 @@ if (($arr[0]['InnCustomer'] == '0') or ($arr[0]['InnCustomer'] = '')) {
 }
 
  $smarty->display('footer.tpl');
-
+// $smarty->display('modal_windows_inn_comp.tpl');
+$smarty->display('_include_modal.tpl');
 

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.1.0, created on 2022-09-26 12:05:17
+/* Smarty version 4.1.0, created on 2022-10-04 14:56:17
   from 'C:\xampp\htdocs\TradeTable_Smarty_PDO\templates\company_by_id_kp.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.1.0',
-  'unifunc' => 'content_63316b4dcb2203_24429702',
+  'unifunc' => 'content_633c2d71b41879_61504147',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '13a2828906884e620a38ea180aeb63cc74291cd6' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TradeTable_Smarty_PDO\\templates\\company_by_id_kp.tpl',
-      1 => 1662466368,
+      1 => 1664881623,
       2 => 'file',
     ),
   ),
@@ -20,8 +20,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_63316b4dcb2203_24429702 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->compiled->nocache_hash = '200621860163316b4dc8ef78_80447150';
+function content_633c2d71b41879_61504147 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->compiled->nocache_hash = '1393061409633c2d71b262f7_84696515';
 ?>
 <div class="zagolovok">
         <?php echo $_smarty_tpl->tpl_vars['company_arr']->value[0]['name'];?>
@@ -212,6 +212,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 </td>
              <td><?php echo $_smarty_tpl->tpl_vars['company_arr']->value[0]['comment'];?>
 </td>
+
+<!-- *********************  Корректировка данных компании ********************* -->
              <td width="20">
              <a href="?id=<?php echo $_smarty_tpl->tpl_vars['id']->value;?>
 &typeQuery=200#win8" class="btn"><img style = "opacity: 0.9" src="icons/table/change.png" alt="formatZakup"></a>

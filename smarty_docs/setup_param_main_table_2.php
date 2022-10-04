@@ -5,6 +5,7 @@
 if ($id <> ''){
 // выбираем все По ID по фильтру
     $array_with_all_kp_temp = GetKPById($pdo,$id);
+    $get_FinishContract = 1; //   когда выводим по ID  то выводим и закрытые КП
     if (count($array_with_all_kp_temp) == '') {
     die (' НЕТ ДАННЫХ ДЛЯ ВЫВОДА ID');
 }
@@ -17,10 +18,15 @@ if ($id <> ''){
 }
 
 
+
+
 $i=0;
 $i1=0;
 foreach ($array_with_all_kp_temp as $value) {
   // ************* Проверяем нужно ли выводить закрытые КП *********************
+
+
+
   $Show_close_Contracts = $get_FinishContract;
   if (($array_with_all_kp_temp[$i1]['FinishContract'] == 1) && ($Show_close_Contracts <> 1))
   { 

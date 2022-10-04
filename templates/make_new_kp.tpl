@@ -109,8 +109,9 @@
  {*    ********************** Телефон Заказчика   ********************} 
 {if isset($tel_comp)}
  <p class="pad5px width15 zhir">Телефон Заказчика : <input type="tel" name="TelCustomer" value ="{$tel_comp}" size="70"></p>
+ 
 {else}
-<p class="pad5px width15 zhir">Телефон Заказчика : <input type="tel" name="TelCustomer" value ="" size="70"></p>
+<p class="pad5px width15 zhir">Телефон Заказчика : <input type="tel" name="TelCustomer" value ="" size="70" data-phone-pattern></p>
 {/if}
  {*    ********************** Почта Заказчика   ********************} 
  {if isset($email_comp)}
@@ -169,6 +170,11 @@
  <p><input type="submit" value="Создать"></p>
  </div>
  </form>
-            
+
+ {*  ******************************** Ссылка на возврат в реестр  ***************}
+  <div class="block"> 
+      <a class="zagolovok" href="index.php">Вернуться в реестр</a>
+ </div>
+
 {include file="footer.tpl"}
               

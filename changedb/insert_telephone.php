@@ -2,16 +2,20 @@
 require_once "../connect_db.php";
 require_once "../functions/telephone_make.php";
  
-$id = $_GET["id"];
-$inn = $_GET["inn"];
-$new_telephone = $_GET["telefon"];
+$id = $_GET['id'];
+$inn = $_GET['inn'];
+
+
+
+
+$new_telephone = $_GET['telefon'];
 $new_telephone=htmlspecialchars($new_telephone);
 
 $new_telephone = telephoneMake($new_telephone); // приводит телефон к стандартному виду
 
 $new_telephone =  DeleteFirstSymbol($new_telephone);
 $whatsapp = $_GET["whatsapp"];
-$viber = $_GET["viber"];
+// $viber = $_GET["viber"];
 $actual = $_GET["actual_phone"];
 $commentPhone = $_GET["commentPhone"];
 $commentPhone=htmlspecialchars($commentPhone);
@@ -44,7 +48,7 @@ if (isset($phone_db)) {
  
  
   if ($priz <> 1) {
-    $sql_insert_phone  = "INSERT INTO `telephone`(`id`, `inn`, `telephone`, `comment`, `whatsapp`, `date_write`, `name`, `old_phone`, `actual` ,`viber`) VALUES ('','$inn','$new_telephone','$commentPhone','$whatsapp', '$today','$contactName','','$actual','$viber')";
+    $sql_insert_phone  = "INSERT INTO `telephone`(`id`, `inn`, `telephone`, `comment`, `whatsapp`, `date_write`, `name`, `old_phone`, `actual` ) VALUES ('','$inn','$new_telephone','$commentPhone','$whatsapp', '$today','$contactName','','$actual')";
     $query = $mysqli->query($sql_insert_phone);
     if (!$query) {
       // echo "WE ARE DIE <br>";
@@ -84,7 +88,10 @@ $db_comment.=" актуал :".$actual.";";
    die("Соединение не удалось: (Добавление в реестр изменений) ");
   }
 
-header ("Location: ../index.php?id=".$id);  // перенаправление на нужную страницу
+
+
+
+header ("Location: ../select_transiton.php?id=".$id."&inn=".$inn);  // перенаправление на нужную страницу
 exit();    // прерываем работу скрипта, чтобы забыл о прошлом
 
 

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.1.0, created on 2022-09-26 15:04:45
+/* Smarty version 4.1.0, created on 2022-10-04 13:50:05
   from 'C:\xampp\htdocs\TradeTable_Smarty_PDO\templates\make_new_kp.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.1.0',
-  'unifunc' => 'content_6331a36d199594_77165647',
+  'unifunc' => 'content_633c1dedcac1b9_19373471',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '592c6aabfbd644fd23aa3b1aa2a89df06a6a53e9' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TradeTable_Smarty_PDO\\templates\\make_new_kp.tpl',
-      1 => 1664191099,
+      1 => 1664884039,
       2 => 'file',
     ),
     '4feb86069f69d7cf7767fcb7fa2f61b4980990d3' => 
@@ -24,19 +24,19 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'ac1e3d6eaa128d645a47a9ac61bceeccb71ee66c' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TradeTable_Smarty_PDO\\templates\\footer.tpl',
-      1 => 1664197276,
+      1 => 1664879491,
       2 => 'file',
     ),
-    'd34797ffad026307bd9185c6e7b7f8fd1de096d4' => 
+    'd919f8696e4c7692c2c26cd01ce509933ce6b3fb' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\TradeTable_Smarty_PDO\\templates\\modal_windows_inn_comp.tpl',
-      1 => 1662467945,
+      0 => 'C:\\xampp\\htdocs\\TradeTable_Smarty_PDO\\templates\\modal\\modal_change_zakup.tpl',
+      1 => 1664879304,
       2 => 'file',
     ),
   ),
   'cache_lifetime' => 120,
 ),true)) {
-function content_6331a36d199594_77165647 (Smarty_Internal_Template $_smarty_tpl) {
+function content_633c1dedcac1b9_19373471 (Smarty_Internal_Template $_smarty_tpl) {
 ?><html lang="ru">
 
 <head>
@@ -78,7 +78,7 @@ function content_6331a36d199594_77165647 (Smarty_Internal_Template $_smarty_tpl)
         <form enctype="multipart/form-data" action="make_new_kp.php" method="get">
             <div class="input_form_left zhir">
               <input type="hidden" name="user" value="zeld">  
-                                           ИНН Заказчика : <input type="number" name="InnCustomer" value ="666">
+                                           ИНН Заказчика : <input type="number" name="InnCustomer" value ="">
                                 </div>
             <div class="input_form_left">
               <input type="submit" value="Запросить ИНН">
@@ -90,7 +90,7 @@ function content_6331a36d199594_77165647 (Smarty_Internal_Template $_smarty_tpl)
                
                             
                     Данный ИНН отсутствует в НАШЕЙ(!!!!!!!) Базе    &nbsp&nbsp&nbsp
-                    <a href="make_new_comp.php?user=zeld&InnCustomer=666" > Добавить?</a>
+                    <a href="make_new_comp.php?user=zeld&InnCustomer=" > Добавить?</a>
                                                         
               </p>
             </div>
@@ -169,7 +169,7 @@ function content_6331a36d199594_77165647 (Smarty_Internal_Template $_smarty_tpl)
 
 
   
-<p class="pad5px width15 zhir">Телефон Заказчика : <input type="tel" name="TelCustomer" value ="" size="70"></p>
+<p class="pad5px width15 zhir">Телефон Заказчика : <input type="tel" name="TelCustomer" value ="" size="70" data-phone-pattern></p>
   
   <p class="pad5px width15 zhir">Эл. Почта Заказчика : <input type="email" name="EmailCustomer" value ="" size="70"></p>
 
@@ -226,23 +226,133 @@ function content_6331a36d199594_77165647 (Smarty_Internal_Template $_smarty_tpl)
  <p><input type="submit" value="Создать"></p>
  </div>
  </form>
-            
-  <!-- Корректировка данных о Компании -->
-<!--    Добавление НОВОГО НОМЕРА телефона -->
 
- 
+   <div class="block"> 
+      <a class="zagolovok" href="index.php">Вернуться в реестр</a>
+ </div>
 
-<!--  *******************   ******** Корректировка телефонного номера -->
-<!-- *********************************// корректировка EMAIL /////////************************* -->
- 
-<!-- ***********************************// Добавление НОВОГО EMAIL  ///////// -->
  <!-- модальные окна для правки по ИНН  -->
 
+ <!-- модальные окна для вставки телефонов -->
 
+  <div class="dm-overlay js-modal " data-modal = "write_comment">
+     <div class="dm-table">
+          <div class="dm-cell">
+              <div class="dm-modal"  >
+                  <!-- <a href="#close" class="close js-modal-close"></a> -->
+                  <a class="close js-modal-close"></a>
+
+  <div>
+    <select id = "js-id" name="id">
+      <option id ="js-new-modal-id" value ="$id"></option>
+            
+    </select>
+  </div>
+
+ <div><b> Номер КП : <span id="js-new-modal-KpNumber">$KpNumber</span></b></div>
+
+  
+ <div>ИНН Заказчика :<span id="js-new-modal-InnCustomer">$InnCustomer</span></div>
+ <div><b>Наименование Заказчика :<span id="js-new-modal-NameCustomer">$NameCustomer</span></b></div>
+  <hr>
+<div>ID  закупки :<span id="js-new-modal-idKp">$idKp</span></div>
+  <hr>
+     
+<div> 
+<p>Важность :
+    <select id="KpImportance" size="1" name="KpImportance">
+      <option id="js-new-modal-KpImportance" selected value=""></option>  
+      <option value="Нейтрально">Нейтрально</option>
+      <option value="Важно">Важно</option>
+      <option on value="Очень важно">Очень важно</option>
+    </select>
+</p>
+ </div>
+
+<div> 
+  <p>Ответственный
+    <select id="Responsible" size="1" name="Responsible">
+        <option id="js-new-modal-Responsible" selected value = ""></option>
+           <option value="Зелизко">Зелизко</option>
+<option value="Горячев">Горячев</option>
+<option value="Гуц">Гуц</option>
+<option value="Штыбко">Штыбко</option>
+<option value="Кулиев">Кулиев</option>
+<option value="Лобов">Лобов</option>
+
+
+     </select>
+  </p>
+</div>
+   <hr>
+
+<div> 
+    <p>Комментарий :<span id="js-new-modal-Comment">$Comment</span></p>
+      <p id="Comment">    
+         <textarea id="textarea-Comment" name="Comment" rows="2" cols="50"></textarea>
+      </p>
+</div>
+<hr>
+
+<div> 
+    <p >Дата след.Звонка <input id="DateNextCall" type="date" name="DateNextCall" value ="$DateNextCall"></p>
+</div>
+
+
+<div> 
+  <p>Состояние КП
+    <select id="KpCondition" size="1" name="KpCondition">
+        <option id="js-new-modal-KpCondition" selected value = ""></option>
+       <option value="В работе">В работе</option>
+<option value="Не требуется">Не требуется</option>
+<option value="Купили у нас">Купили у нас</option>
+<option value="Уже купили">Уже купили</option>
+<option value="Перенос на сл.год">Перенос на сл.год</option>
+
+
+
+        </select>
+  </p>
+</div>
+<div><p>Сумма КП  <input type="number" id="KpSum" name="KpSum" value ="$KpSum"></p></div>
+<div><p>НМЦК Тендера КП : <span id="js-new-modal-TenderSum">$TenderSum</span></p></div>
+<hr>
+
+<div> 
+    <p>Дата заключения Контакта <input id="dateContract" type="date" name="dateContract" value ="$dateContract">
+    Процент выполнения  <input type="number" id="procent_work" name="procent_work" value ="$procent_work"></p>
+    <p>Дата окончания Контакта <input id="dateFinishContract" type="date" name="dateFinishContract" value ="$dateFinishContract"></p>
+</div>
+<hr>
+
+<div> 
+  <p>Контракт закрыт 
+    <select id="FinishContract" size="1" name="FinishContract">
+      <!-- <option id="js-new-modal-FinishContract" selected value = "$FinishContract">$FinishContract</option> -->
+      <option value="0">Контракт НЕ закрыт</option>
+      <option value="1">Контракт закрыт</option>
+  </select>
+  </p>
+</div>
+
+<div> 
+  <p>Адрес поставки : </p> 
+  <textarea id="textarea-Adress" name="Adress" rows="1" cols="50"><span id="js-new-modal-Adress">$Adress</span></textarea>
+</div>
+<div class="container-for-btn">
+<div class = "btncommentClass button">СОХРАНИТЬ</div>                
+</div>    
+
+              
+       
+
+              </div>
+          </div>
+      </div>
+  </div> <!-- модальные окна для изменения инорфмаци d КП -->
 <script type="text/javascript" src="js/ajax_query_comment.js"></script>
 <script type="text/javascript" src="js/modal.js"></script>
-<script type="text/javascript" src="js/telephone_mask/jquery-3.3.1.maskedinput.min.js"></script>
-<script type="text/javascript" src="js/telephone_mask/telephone_number.js"></script>
+<script type="text/javascript" src="js/phone_mask.js"></script>
 
 </body>
 

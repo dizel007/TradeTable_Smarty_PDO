@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.1.0, created on 2022-09-27 09:29:18
+/* Smarty version 4.1.0, created on 2022-10-04 14:50:02
   from 'C:\xampp\htdocs\TradeTable_Smarty_PDO\templates\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.1.0',
-  'unifunc' => 'content_6332983e7ea4e4_92826207',
+  'unifunc' => 'content_633c1dea96b5c8_43593828',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ff1b85001aaf4fd0e29b5f6c11783a9f89cb18c7' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TradeTable_Smarty_PDO\\templates\\index.tpl',
-      1 => 1663244120,
+      1 => 1664864522,
       2 => 'file',
     ),
     '4feb86069f69d7cf7767fcb7fa2f61b4980990d3' => 
@@ -42,25 +42,25 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     '41c6dc6a18a8b58a180957fb4cea6d1a8efbd372' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TradeTable_Smarty_PDO\\templates\\main_table.tpl',
-      1 => 1662970009,
+      1 => 1664866249,
       2 => 'file',
     ),
     'ac1e3d6eaa128d645a47a9ac61bceeccb71ee66c' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TradeTable_Smarty_PDO\\templates\\footer.tpl',
-      1 => 1664198333,
+      1 => 1664879491,
       2 => 'file',
     ),
-    'd34797ffad026307bd9185c6e7b7f8fd1de096d4' => 
+    'd919f8696e4c7692c2c26cd01ce509933ce6b3fb' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\TradeTable_Smarty_PDO\\templates\\modal_windows_inn_comp.tpl',
-      1 => 1662467945,
+      0 => 'C:\\xampp\\htdocs\\TradeTable_Smarty_PDO\\templates\\modal\\modal_change_zakup.tpl',
+      1 => 1664879304,
       2 => 'file',
     ),
   ),
   'cache_lifetime' => 120,
 ),true)) {
-function content_6332983e7ea4e4_92826207 (Smarty_Internal_Template $_smarty_tpl) {
+function content_633c1dea96b5c8_43593828 (Smarty_Internal_Template $_smarty_tpl) {
 ?><html lang="ru">
 
 <head>
@@ -193,7 +193,7 @@ function content_6332983e7ea4e4_92826207 (Smarty_Internal_Template $_smarty_tpl)
 
 
 <div class = "filter_p">
-ФИЛЬТР: <b>20</b> КП:
+ФИЛЬТР: <b>21</b> КП:
 
 </div>
 
@@ -240,6 +240,254 @@ function content_6332983e7ea4e4_92826207 (Smarty_Internal_Template $_smarty_tpl)
                <td>1</td>
  <!-- ***************************  Номер КП  ********************************************* -->              
 
+                  <td><a href="open_excel/simplexlsx.php?LinkKp=EXCEL/№88 от 04.10.2022 ООО ГОРЗЕЛЕНСТРОЙ от ООО ТД АНМКАС.xlsx" class=\"btn\" target=\"_blank\">88</a></td>
+                 
+
+<!-- ***************************  EXCEL файл  ********************************************** -->   
+
+                      <td><a href="EXCEL/№88 от 04.10.2022 ООО ГОРЗЕЛЕНСТРОЙ от ООО ТД АНМКАС.xlsx"><img class="scale11" style = "opacity: 0.8" src="icons/table/excel.png" alt="Excel"></a></td>
+          
+<! -- Проверяем есть ли файл с КП в формате ексель на сервере ************************************** -->
+<! -- Скачиваем счет -->
+    
+   <td><a href = "xls_schet/make_schet.php?id=3640&inn=5018186852&LinkKp=EXCEL/№88 от 04.10.2022 ООО ГОРЗЕЛЕНСТРОЙ от ООО ТД АНМКАС.xlsx"><img class="scale11" style = "opacity: 0.8" src="icons/table/schet.png" alt="Excel"></a></td>
+          
+
+<!-- ***************************  Дата КП  ************************************************* -->          
+         <td>2022-10-04</td>
+                                      <!--   --> 
+<!-- ***************************  ИНН покупателя  ********************************************* -->        
+       <td width ="70" class=" hidden_class_column">
+                        <a href="show_comp_by_inn.php?inn=5018186852" target="_blank">
+                  5018186852
+            </a>
+            
+       </td>
+<!-- ***************************  PDF file  ***************************************** -->
+
+          
+       <td><img style = "opacity: 0.2" src="icons/table/pdf.png" alt="Excel"></td>
+         
+
+
+<!-- ***************************  Наименование покупателя  ***************************************** -->
+                          <td width ="150">ООО «ГОРЗЕЛЕНСТРОЙ»</td>
+             
+<!-- ******************************  Icons Email  *********************************************** -->
+      <td><a href= "mailer/login_mail.php?id=3640&InnCustomer=5018186852" target="_blank"><img class="scale11" style = "opacity: 0.8" src="icons/table/email.png" alt="SeeKp"></a></td>
+  <!-- ********************************** ВАЖНОСТЬ КП ************************************************ -->
+      <td  class="hidden_class_column" id = "js-KpImportance3640" width ="50" class="hidden_class_column"></td>     
+
+ <!-- ********************************** ОТветственный  ************************************************ -->
+     <td id= "js-Responsible3640" width="80" class="hidden_class_column">Зелизко</td>
+
+ <!-- ******************************  ПАПКА для открытия КП  *************************************  -->
+     <td><a name="3640" href="index.php?id=3640" target="_blank"><img class="scale11" src="icons/table/open_dir.png" style = "opacity: 0.6" alt="OPEN" title="Открыть КП id=3640"></a></td> 
+<!-- ********************************** Комментарий  ************************************************ -->
+      <td id = "js-comment3640" class ="limit_width text_left"></td>
+
+<!-- ********************************** Редактирование  ************************************************ -->
+<td><img id = "3640" data-modal = "write_comment" class="js-open-modal commentClass scale11" src="icons/table/change.png" alt="addCooment"></td> 
+
+<!-- ********************************** Дата следующего звонка  ********************************** -->
+
+      <td id = "js-DateNextCall3640" width="60" class ="alarmcolor  hidden_class_column"></td>
+<!-- ********************************** СОСТОЯНИЕ КП ********************************** -->
+      <td class="hidden_class_column"> <div id = "js-KpCondition3640" class = ""></div></td>
+<!-- ********************************** СУММА КП ********************************** -->      
+      <td id = "js-KpSum3640" >233,023</td>
+ <!-- ********************************** СУММА ТЕНДЕРА  ********************************** -->      
+      <td class="hidden_class_column">0</td>
+
+<!-- ********************************** Дата окончания выполнения контракта ********************** -->
+        <td class="hidden_class_column" id = "js-dateContract3640">
+        <img style = "opacity: 0.2" src="icons/table/dateContract.png" title="Нет данных">
+        </td>
+
+       
+      
+
+<!-- ******************************  ФИНИШ Контракта   ********************************************* -->
+    <td class="hidden_class_column" id = "js-FinishContract3640" >0</td>
+<!-- ******************************  ФИНИШ Контракта   ********************************************* -->
+      <td class="hidden_class_column" id = "js-dateFinishContract3640" width="60"></td>
+
+<!-- ******************************  ИСТОРИ КП  *************************************  -->
+     <td><a name="3640" href="reports_show_history_kp.php?typeQuery=5&id_kp=3640" target="_blank"><img class="scale11" src="icons/table/history_kp.png" style = "opacity: 0.6" alt="История КП" title="История КП"></a></td> 
+<!-- ****************************** Адрес поставки   ********************************************* -->
+      <td class="hidden_class_column" id = "js-Adress3640" width ="150" class="hidden_class_column"></td>
+               
+       </tr>
+    
+           <tr class ="   DrawDark">
+<!-- ***************************  порядковый норме  ************************************************* -->
+               <td>2</td>
+ <!-- ***************************  Номер КП  ********************************************* -->              
+
+                  <td><a href="open_excel/simplexlsx.php?LinkKp=EXCEL/№84 от 04.10.2022 Пупок свисток от ООО ТД АНМКАС.xlsx" class=\"btn\" target=\"_blank\">84</a></td>
+                 
+
+<!-- ***************************  EXCEL файл  ********************************************** -->   
+
+                      <td><a href="EXCEL/№84 от 04.10.2022 Пупок свисток от ООО ТД АНМКАС.xlsx"><img class="scale11" style = "opacity: 0.8" src="icons/table/excel.png" alt="Excel"></a></td>
+          
+<! -- Проверяем есть ли файл с КП в формате ексель на сервере ************************************** -->
+<! -- Скачиваем счет -->
+    
+   <td><a href = "xls_schet/make_schet.php?id=3636&inn=0&LinkKp=EXCEL/№84 от 04.10.2022 Пупок свисток от ООО ТД АНМКАС.xlsx"><img class="scale11" style = "opacity: 0.8" src="icons/table/schet.png" alt="Excel"></a></td>
+          
+
+<!-- ***************************  Дата КП  ************************************************* -->          
+         <td>2022-10-04</td>
+                                      <!--   --> 
+<!-- ***************************  ИНН покупателя  ********************************************* -->        
+       <td width ="70" class="sell_comp hidden_class_column">
+                              &nbsp
+            
+       </td>
+<!-- ***************************  PDF file  ***************************************** -->
+
+          
+       <td><img style = "opacity: 0.2" src="icons/table/pdf.png" alt="Excel"></td>
+         
+
+
+<!-- ***************************  Наименование покупателя  ***************************************** -->
+                          <td width ="150">Пупок свисток</td>
+             
+<!-- ******************************  Icons Email  *********************************************** -->
+      <td><a href= "mailer/login_mail.php?id=3636&InnCustomer=0" target="_blank"><img class="scale11" style = "opacity: 0.8" src="icons/table/email.png" alt="SeeKp"></a></td>
+  <!-- ********************************** ВАЖНОСТЬ КП ************************************************ -->
+      <td  class="hidden_class_column" id = "js-KpImportance3636" width ="50" class="hidden_class_column"></td>     
+
+ <!-- ********************************** ОТветственный  ************************************************ -->
+     <td id= "js-Responsible3636" width="80" class="hidden_class_column">Зелизко</td>
+
+ <!-- ******************************  ПАПКА для открытия КП  *************************************  -->
+     <td><a name="3636" href="index.php?id=3636" target="_blank"><img class="scale11" src="icons/table/open_dir.png" style = "opacity: 0.6" alt="OPEN" title="Открыть КП id=3636"></a></td> 
+<!-- ********************************** Комментарий  ************************************************ -->
+      <td id = "js-comment3636" class ="limit_width text_left">2022-10-04(zeld): юржлдот; </td>
+
+<!-- ********************************** Редактирование  ************************************************ -->
+<td><img id = "3636" data-modal = "write_comment" class="js-open-modal commentClass scale11" src="icons/table/change.png" alt="addCooment"></td> 
+
+<!-- ********************************** Дата следующего звонка  ********************************** -->
+
+      <td id = "js-DateNextCall3636" width="60" class ="alarmcolor  hidden_class_column"></td>
+<!-- ********************************** СОСТОЯНИЕ КП ********************************** -->
+      <td class="hidden_class_column"> <div id = "js-KpCondition3636" class = ""></div></td>
+<!-- ********************************** СУММА КП ********************************** -->      
+      <td id = "js-KpSum3636" >233,023</td>
+ <!-- ********************************** СУММА ТЕНДЕРА  ********************************** -->      
+      <td class="hidden_class_column">0</td>
+
+<!-- ********************************** Дата окончания выполнения контракта ********************** -->
+        <td class="hidden_class_column" id = "js-dateContract3636">
+        <img style = "opacity: 0.2" src="icons/table/dateContract.png" title="Нет данных">
+        </td>
+
+       
+      
+
+<!-- ******************************  ФИНИШ Контракта   ********************************************* -->
+    <td class="hidden_class_column" id = "js-FinishContract3636" >0</td>
+<!-- ******************************  ФИНИШ Контракта   ********************************************* -->
+      <td class="hidden_class_column" id = "js-dateFinishContract3636" width="60">2022-10-05</td>
+
+<!-- ******************************  ИСТОРИ КП  *************************************  -->
+     <td><a name="3636" href="reports_show_history_kp.php?typeQuery=5&id_kp=3636" target="_blank"><img class="scale11" src="icons/table/history_kp.png" style = "opacity: 0.6" alt="История КП" title="История КП"></a></td> 
+<!-- ****************************** Адрес поставки   ********************************************* -->
+      <td class="hidden_class_column" id = "js-Adress3636" width ="150" class="hidden_class_column">домпр</td>
+               
+       </tr>
+    
+           <tr class ="   DrawLight">
+<!-- ***************************  порядковый норме  ************************************************* -->
+               <td>3</td>
+ <!-- ***************************  Номер КП  ********************************************* -->              
+
+                  <td><a href="open_excel/simplexlsx.php?LinkKp=EXCEL/№83 от 04.10.2022 Пупок свисток от ООО ТД АНМКАС.xlsx" class=\"btn\" target=\"_blank\">83</a></td>
+                 
+
+<!-- ***************************  EXCEL файл  ********************************************** -->   
+
+                      <td><a href="EXCEL/№83 от 04.10.2022 Пупок свисток от ООО ТД АНМКАС.xlsx"><img class="scale11" style = "opacity: 0.8" src="icons/table/excel.png" alt="Excel"></a></td>
+          
+<! -- Проверяем есть ли файл с КП в формате ексель на сервере ************************************** -->
+<! -- Скачиваем счет -->
+    
+   <td><a href = "xls_schet/make_schet.php?id=3635&inn=0&LinkKp=EXCEL/№83 от 04.10.2022 Пупок свисток от ООО ТД АНМКАС.xlsx"><img class="scale11" style = "opacity: 0.8" src="icons/table/schet.png" alt="Excel"></a></td>
+          
+
+<!-- ***************************  Дата КП  ************************************************* -->          
+         <td>2022-10-04</td>
+                                      <!--   --> 
+<!-- ***************************  ИНН покупателя  ********************************************* -->        
+       <td width ="70" class="sell_comp hidden_class_column">
+                              &nbsp
+            
+       </td>
+<!-- ***************************  PDF file  ***************************************** -->
+
+          
+       <td><img style = "opacity: 0.2" src="icons/table/pdf.png" alt="Excel"></td>
+         
+
+
+<!-- ***************************  Наименование покупателя  ***************************************** -->
+                          <td width ="150">Пупок свисток</td>
+             
+<!-- ******************************  Icons Email  *********************************************** -->
+      <td><a href= "mailer/login_mail.php?id=3635&InnCustomer=0" target="_blank"><img class="scale11" style = "opacity: 0.8" src="icons/table/email.png" alt="SeeKp"></a></td>
+  <!-- ********************************** ВАЖНОСТЬ КП ************************************************ -->
+      <td  class="hidden_class_column" id = "js-KpImportance3635" width ="50" class="hidden_class_column"></td>     
+
+ <!-- ********************************** ОТветственный  ************************************************ -->
+     <td id= "js-Responsible3635" width="80" class="hidden_class_column">Зелизко</td>
+
+ <!-- ******************************  ПАПКА для открытия КП  *************************************  -->
+     <td><a name="3635" href="index.php?id=3635" target="_blank"><img class="scale11" src="icons/table/open_dir.png" style = "opacity: 0.6" alt="OPEN" title="Открыть КП id=3635"></a></td> 
+<!-- ********************************** Комментарий  ************************************************ -->
+      <td id = "js-comment3635" class ="limit_width text_left"></td>
+
+<!-- ********************************** Редактирование  ************************************************ -->
+<td><img id = "3635" data-modal = "write_comment" class="js-open-modal commentClass scale11" src="icons/table/change.png" alt="addCooment"></td> 
+
+<!-- ********************************** Дата следующего звонка  ********************************** -->
+
+      <td id = "js-DateNextCall3635" width="60" class ="alarmcolor  hidden_class_column"></td>
+<!-- ********************************** СОСТОЯНИЕ КП ********************************** -->
+      <td class="hidden_class_column"> <div id = "js-KpCondition3635" class = ""></div></td>
+<!-- ********************************** СУММА КП ********************************** -->      
+      <td id = "js-KpSum3635" >233,023</td>
+ <!-- ********************************** СУММА ТЕНДЕРА  ********************************** -->      
+      <td class="hidden_class_column">0</td>
+
+<!-- ********************************** Дата окончания выполнения контракта ********************** -->
+        <td class="hidden_class_column" id = "js-dateContract3635">
+        <img style = "opacity: 0.2" src="icons/table/dateContract.png" title="Нет данных">
+        </td>
+
+       
+      
+
+<!-- ******************************  ФИНИШ Контракта   ********************************************* -->
+    <td class="hidden_class_column" id = "js-FinishContract3635" >0</td>
+<!-- ******************************  ФИНИШ Контракта   ********************************************* -->
+      <td class="hidden_class_column" id = "js-dateFinishContract3635" width="60"></td>
+
+<!-- ******************************  ИСТОРИ КП  *************************************  -->
+     <td><a name="3635" href="reports_show_history_kp.php?typeQuery=5&id_kp=3635" target="_blank"><img class="scale11" src="icons/table/history_kp.png" style = "opacity: 0.6" alt="История КП" title="История КП"></a></td> 
+<!-- ****************************** Адрес поставки   ********************************************* -->
+      <td class="hidden_class_column" id = "js-Adress3635" width ="150" class="hidden_class_column"></td>
+               
+       </tr>
+    
+           <tr class ="   DrawDark">
+<!-- ***************************  порядковый норме  ************************************************* -->
+               <td>4</td>
+ <!-- ***************************  Номер КП  ********************************************* -->              
+
                   <td><a href="open_excel/simplexlsx.php?LinkKp=EXCEL/№123123 от 26.09.2022 ООО ПКТ СТРОЙ от ООО ТД АНМКАС.xlsx" class=\"btn\" target=\"_blank\">123123</a></td>
                  
 
@@ -257,7 +505,12 @@ function content_6332983e7ea4e4_92826207 (Smarty_Internal_Template $_smarty_tpl)
          <td>2022-09-26</td>
                                       <!--   --> 
 <!-- ***************************  ИНН покупателя  ********************************************* -->        
-       <td width ="70" class=" hidden_class_column">3525395322</td>
+       <td width ="70" class=" hidden_class_column">
+                        <a href="show_comp_by_inn.php?inn=3525395322" target="_blank">
+                  3525395322
+            </a>
+            
+       </td>
 <!-- ***************************  PDF file  ***************************************** -->
 
           
@@ -279,11 +532,11 @@ function content_6332983e7ea4e4_92826207 (Smarty_Internal_Template $_smarty_tpl)
  <!-- ******************************  ПАПКА для открытия КП  *************************************  -->
      <td><a name="3634" href="index.php?id=3634" target="_blank"><img class="scale11" src="icons/table/open_dir.png" style = "opacity: 0.6" alt="OPEN" title="Открыть КП id=3634"></a></td> 
 <!-- ********************************** Комментарий  ************************************************ -->
-      <td id = "js-comment3634" class ="limit_width text_left"></td>
+      <td id = "js-comment3634" class ="limit_width text_left">2022-09-28(zeld): Не отвечают. Отправил КП;; ДДДДДОООРРРРТТТИ; </td>
 
 <!-- ********************************** Редактирование  ************************************************ -->
 <td><img id = "3634" data-modal = "write_comment" class="js-open-modal commentClass scale11" src="icons/table/change.png" alt="addCooment"></td> 
-      <!-- <td  class= "hidden_class_column"  id="markerLink $id"><img id = "$id" data-modal = "write_comment" class="js-open-modal commentClass" src="icons/table/change.png" alt="addCooment"></td>  -->
+
 <!-- ********************************** Дата следующего звонка  ********************************** -->
 
       <td id = "js-DateNextCall3634" width="60" class ="alarmcolor  hidden_class_column"></td>
@@ -314,9 +567,9 @@ function content_6332983e7ea4e4_92826207 (Smarty_Internal_Template $_smarty_tpl)
                
        </tr>
     
-           <tr class ="RedColor   DrawDark">
+           <tr class ="GreenColor   DrawLight">
 <!-- ***************************  порядковый норме  ************************************************* -->
-               <td>2</td>
+               <td>5</td>
  <!-- ***************************  Номер КП  ********************************************* -->              
 
                   <td><a href="open_excel/simplexlsx.php?LinkKp=EXCEL/№82 от 23.09.2022 Пучин Михаил Михайлович от ООО ТД АНМКАС.xlsx" class=\"btn\" target=\"_blank\">82</a></td>
@@ -336,7 +589,12 @@ function content_6332983e7ea4e4_92826207 (Smarty_Internal_Template $_smarty_tpl)
          <td>2022-09-23</td>
                                       <!--   --> 
 <!-- ***************************  ИНН покупателя  ********************************************* -->        
-       <td width ="70" class=" hidden_class_column">862002062408</td>
+       <td width ="70" class=" hidden_class_column">
+                        <a href="show_comp_by_inn.php?inn=862002062408" target="_blank">
+                  862002062408
+            </a>
+            
+       </td>
 <!-- ***************************  PDF file  ***************************************** -->
 
           
@@ -350,7 +608,7 @@ function content_6332983e7ea4e4_92826207 (Smarty_Internal_Template $_smarty_tpl)
 <!-- ******************************  Icons Email  *********************************************** -->
       <td><a href= "mailer/login_mail.php?id=3633&InnCustomer=862002062408" target="_blank"><img class="scale11" style = "opacity: 0.8" src="icons/table/email.png" alt="SeeKp"></a></td>
   <!-- ********************************** ВАЖНОСТЬ КП ************************************************ -->
-      <td  class="hidden_class_column" id = "js-KpImportance3633" width ="50" class="hidden_class_column">Важно</td>     
+      <td  class="hidden_class_column" id = "js-KpImportance3633" width ="50" class="hidden_class_column">Очень важно</td>     
 
  <!-- ********************************** ОТветственный  ************************************************ -->
      <td id= "js-Responsible3633" width="80" class="hidden_class_column">Зелизко</td>
@@ -358,11 +616,11 @@ function content_6332983e7ea4e4_92826207 (Smarty_Internal_Template $_smarty_tpl)
  <!-- ******************************  ПАПКА для открытия КП  *************************************  -->
      <td><a name="3633" href="index.php?id=3633" target="_blank"><img class="scale11" src="icons/table/open_dir.png" style = "opacity: 0.6" alt="OPEN" title="Открыть КП id=3633"></a></td> 
 <!-- ********************************** Комментарий  ************************************************ -->
-      <td id = "js-comment3633" class ="limit_width text_left"></td>
+      <td id = "js-comment3633" class ="limit_width text_left">2022-10-04(zeld): 234234; </td>
 
 <!-- ********************************** Редактирование  ************************************************ -->
 <td><img id = "3633" data-modal = "write_comment" class="js-open-modal commentClass scale11" src="icons/table/change.png" alt="addCooment"></td> 
-      <!-- <td  class= "hidden_class_column"  id="markerLink $id"><img id = "$id" data-modal = "write_comment" class="js-open-modal commentClass" src="icons/table/change.png" alt="addCooment"></td>  -->
+
 <!-- ********************************** Дата следующего звонка  ********************************** -->
 
       <td id = "js-DateNextCall3633" width="60" class ="alarmcolor  hidden_class_column"></td>
@@ -389,93 +647,13 @@ function content_6332983e7ea4e4_92826207 (Smarty_Internal_Template $_smarty_tpl)
 <!-- ******************************  ИСТОРИ КП  *************************************  -->
      <td><a name="3633" href="reports_show_history_kp.php?typeQuery=5&id_kp=3633" target="_blank"><img class="scale11" src="icons/table/history_kp.png" style = "opacity: 0.6" alt="История КП" title="История КП"></a></td> 
 <!-- ****************************** Адрес поставки   ********************************************* -->
-      <td class="hidden_class_column" id = "js-Adress3633" width ="150" class="hidden_class_column">длтдтлдоитд др ро  д </td>
-               
-       </tr>
-    
-           <tr class ="   DrawLight">
-<!-- ***************************  порядковый норме  ************************************************* -->
-               <td>3</td>
- <!-- ***************************  Номер КП  ********************************************* -->              
-
-          
-       <td>81</td> 
-         
-
-<!-- ***************************  EXCEL файл  ********************************************** -->   
-
-          
-       <td><img style = "opacity: 0.2" src="icons/table/excel.png" alt="Excel"></td>
-         
-<! -- Проверяем есть ли файл с КП в формате ексель на сервере ************************************** -->
-<! -- Скачиваем счет -->
-      <td><img style = "opacity: 0.2" src="icons/table/schet.png" alt="Excel"></td>
-        
-
-<!-- ***************************  Дата КП  ************************************************* -->          
-         <td>2022-09-23</td>
-                                      <!--   --> 
-<!-- ***************************  ИНН покупателя  ********************************************* -->        
-       <td width ="70" class=" hidden_class_column">5018186852</td>
-<!-- ***************************  PDF file  ***************************************** -->
-
-          
-       <td><img style = "opacity: 0.2" src="icons/table/pdf.png" alt="Excel"></td>
-         
-
-
-<!-- ***************************  Наименование покупателя  ***************************************** -->
-                          <td width ="150">ООО «ГОРЗЕЛЕНСТРОЙ»</td>
-             
-<!-- ******************************  Icons Email  *********************************************** -->
-      <td><a href= "mailer/login_mail.php?id=3632&InnCustomer=5018186852" target="_blank"><img class="scale11" style = "opacity: 0.8" src="icons/table/email.png" alt="SeeKp"></a></td>
-  <!-- ********************************** ВАЖНОСТЬ КП ************************************************ -->
-      <td  class="hidden_class_column" id = "js-KpImportance3632" width ="50" class="hidden_class_column"></td>     
-
- <!-- ********************************** ОТветственный  ************************************************ -->
-     <td id= "js-Responsible3632" width="80" class="hidden_class_column">Зелизко</td>
-
- <!-- ******************************  ПАПКА для открытия КП  *************************************  -->
-     <td><a name="3632" href="index.php?id=3632" target="_blank"><img class="scale11" src="icons/table/open_dir.png" style = "opacity: 0.6" alt="OPEN" title="Открыть КП id=3632"></a></td> 
-<!-- ********************************** Комментарий  ************************************************ -->
-      <td id = "js-comment3632" class ="limit_width text_left"></td>
-
-<!-- ********************************** Редактирование  ************************************************ -->
-<td><img id = "3632" data-modal = "write_comment" class="js-open-modal commentClass scale11" src="icons/table/change.png" alt="addCooment"></td> 
-      <!-- <td  class= "hidden_class_column"  id="markerLink $id"><img id = "$id" data-modal = "write_comment" class="js-open-modal commentClass" src="icons/table/change.png" alt="addCooment"></td>  -->
-<!-- ********************************** Дата следующего звонка  ********************************** -->
-
-      <td id = "js-DateNextCall3632" width="60" class ="alarmcolor  hidden_class_column"></td>
-<!-- ********************************** СОСТОЯНИЕ КП ********************************** -->
-      <td class="hidden_class_column"> <div id = "js-KpCondition3632" class = ""></div></td>
-<!-- ********************************** СУММА КП ********************************** -->      
-      <td id = "js-KpSum3632" >233,023</td>
- <!-- ********************************** СУММА ТЕНДЕРА  ********************************** -->      
-      <td class="hidden_class_column">0</td>
-
-<!-- ********************************** Дата окончания выполнения контракта ********************** -->
-        <td class="hidden_class_column" id = "js-dateContract3632">
-        <img style = "opacity: 0.2" src="icons/table/dateContract.png" title="Нет данных">
-        </td>
-
-       
-      
-
-<!-- ******************************  ФИНИШ Контракта   ********************************************* -->
-    <td class="hidden_class_column" id = "js-FinishContract3632" >0</td>
-<!-- ******************************  ФИНИШ Контракта   ********************************************* -->
-      <td class="hidden_class_column" id = "js-dateFinishContract3632" width="60"></td>
-
-<!-- ******************************  ИСТОРИ КП  *************************************  -->
-     <td><a name="3632" href="reports_show_history_kp.php?typeQuery=5&id_kp=3632" target="_blank"><img class="scale11" src="icons/table/history_kp.png" style = "opacity: 0.6" alt="История КП" title="История КП"></a></td> 
-<!-- ****************************** Адрес поставки   ********************************************* -->
-      <td class="hidden_class_column" id = "js-Adress3632" width ="150" class="hidden_class_column">3567</td>
+      <td class="hidden_class_column" id = "js-Adress3633" width ="150" class="hidden_class_column">длтдтлдукенукенукен</td>
                
        </tr>
     
            <tr class ="   DrawDark">
 <!-- ***************************  порядковый норме  ************************************************* -->
-               <td>4</td>
+               <td>6</td>
  <!-- ***************************  Номер КП  ********************************************* -->              
 
           
@@ -496,7 +674,12 @@ function content_6332983e7ea4e4_92826207 (Smarty_Internal_Template $_smarty_tpl)
          <td>2022-09-23</td>
                                       <!--   --> 
 <!-- ***************************  ИНН покупателя  ********************************************* -->        
-       <td width ="70" class=" hidden_class_column">3525395322</td>
+       <td width ="70" class=" hidden_class_column">
+                        <a href="show_comp_by_inn.php?inn=3525395322" target="_blank">
+                  3525395322
+            </a>
+            
+       </td>
 <!-- ***************************  PDF file  ***************************************** -->
 
           
@@ -518,11 +701,11 @@ function content_6332983e7ea4e4_92826207 (Smarty_Internal_Template $_smarty_tpl)
  <!-- ******************************  ПАПКА для открытия КП  *************************************  -->
      <td><a name="3628" href="index.php?id=3628" target="_blank"><img class="scale11" src="icons/table/open_dir.png" style = "opacity: 0.6" alt="OPEN" title="Открыть КП id=3628"></a></td> 
 <!-- ********************************** Комментарий  ************************************************ -->
-      <td id = "js-comment3628" class ="limit_width text_left"></td>
+      <td id = "js-comment3628" class ="limit_width text_left">2022-09-28(zeld): Созвонился с Андреем; </td>
 
 <!-- ********************************** Редактирование  ************************************************ -->
 <td><img id = "3628" data-modal = "write_comment" class="js-open-modal commentClass scale11" src="icons/table/change.png" alt="addCooment"></td> 
-      <!-- <td  class= "hidden_class_column"  id="markerLink $id"><img id = "$id" data-modal = "write_comment" class="js-open-modal commentClass" src="icons/table/change.png" alt="addCooment"></td>  -->
+
 <!-- ********************************** Дата следующего звонка  ********************************** -->
 
       <td id = "js-DateNextCall3628" width="60" class ="alarmcolor  hidden_class_column"></td>
@@ -555,7 +738,7 @@ function content_6332983e7ea4e4_92826207 (Smarty_Internal_Template $_smarty_tpl)
     
            <tr class ="   DrawLight">
 <!-- ***************************  порядковый норме  ************************************************* -->
-               <td>5</td>
+               <td>7</td>
  <!-- ***************************  Номер КП  ********************************************* -->              
 
           
@@ -576,7 +759,12 @@ function content_6332983e7ea4e4_92826207 (Smarty_Internal_Template $_smarty_tpl)
          <td>2022-09-20</td>
                                       <!--   --> 
 <!-- ***************************  ИНН покупателя  ********************************************* -->        
-       <td width ="70" class=" hidden_class_column">5018186852</td>
+       <td width ="70" class="sell_comp hidden_class_column">
+                        <a href="show_comp_by_inn.php?inn=5018186852" target="_blank">
+                  5018186852
+            </a>
+            
+       </td>
 <!-- ***************************  PDF file  ***************************************** -->
 
           
@@ -598,11 +786,11 @@ function content_6332983e7ea4e4_92826207 (Smarty_Internal_Template $_smarty_tpl)
  <!-- ******************************  ПАПКА для открытия КП  *************************************  -->
      <td><a name="3626" href="index.php?id=3626" target="_blank"><img class="scale11" src="icons/table/open_dir.png" style = "opacity: 0.6" alt="OPEN" title="Открыть КП id=3626"></a></td> 
 <!-- ********************************** Комментарий  ************************************************ -->
-      <td id = "js-comment3626" class ="limit_width text_left">2022-09-22(zeld): цуцуцу; </td>
+      <td id = "js-comment3626" class ="limit_width text_left">2022-09-30(zeld): dfgsdfghdfg; <br><hr>2022-09-28(zeld): ДДДДДОООРРРРТТТИ; Созвонился с Андреем; <br><hr>2022-09-22(zeld): цуцуцу; </td>
 
 <!-- ********************************** Редактирование  ************************************************ -->
 <td><img id = "3626" data-modal = "write_comment" class="js-open-modal commentClass scale11" src="icons/table/change.png" alt="addCooment"></td> 
-      <!-- <td  class= "hidden_class_column"  id="markerLink $id"><img id = "$id" data-modal = "write_comment" class="js-open-modal commentClass" src="icons/table/change.png" alt="addCooment"></td>  -->
+
 <!-- ********************************** Дата следующего звонка  ********************************** -->
 
       <td id = "js-DateNextCall3626" width="60" class ="alarmcolor  hidden_class_column"></td>
@@ -635,7 +823,7 @@ function content_6332983e7ea4e4_92826207 (Smarty_Internal_Template $_smarty_tpl)
     
            <tr class ="GreenColor   DrawDark">
 <!-- ***************************  порядковый норме  ************************************************* -->
-               <td>6</td>
+               <td>8</td>
  <!-- ***************************  Номер КП  ********************************************* -->              
 
           
@@ -656,7 +844,12 @@ function content_6332983e7ea4e4_92826207 (Smarty_Internal_Template $_smarty_tpl)
          <td>2022-09-16</td>
                                       <!--   --> 
 <!-- ***************************  ИНН покупателя  ********************************************* -->        
-       <td width ="70" class=" hidden_class_column">7810489590</td>
+       <td width ="70" class=" hidden_class_column">
+                        <a href="show_comp_by_inn.php?inn=7810489590" target="_blank">
+                  7810489590
+            </a>
+            
+       </td>
 <!-- ***************************  PDF file  ***************************************** -->
 
           
@@ -678,11 +871,11 @@ function content_6332983e7ea4e4_92826207 (Smarty_Internal_Template $_smarty_tpl)
  <!-- ******************************  ПАПКА для открытия КП  *************************************  -->
      <td><a name="3606" href="index.php?id=3606" target="_blank"><img class="scale11" src="icons/table/open_dir.png" style = "opacity: 0.6" alt="OPEN" title="Открыть КП id=3606"></a></td> 
 <!-- ********************************** Комментарий  ************************************************ -->
-      <td id = "js-comment3606" class ="limit_width text_left">2022-09-22(zeld): цйу; <br><hr>2022-09-15(zeld): ssss; </td>
+      <td id = "js-comment3606" class ="limit_width text_left">2022-09-28(zeld): Созвонился с Андреем; Созвонился с Андреем; Созвонился с Андреем; df jdg kdfh g s;ldg lkxjf hlkdjhgkhdfgl. lsugh lkdng sl gh ;al udh lgskdg lsdgll uhlgsdfghh; df jdg kd; Созвонился с Андреем; Созвонился с Андреем; Созвонился с Андреем; df jdg   kdfh g s;ldg lkxjf hlkdjhgkhdfgl.  lsugh lkdng sl gh ;al udh lgskdg lsdgll uhlgsdfghh; df jdg   kdfh g s;ldg lkxjf hlkdjhgkhdfgl.  lsugh lkdng sl gh ;al udh lgskdg lsdgll uhlgsdfghh; <br><hr>2022-09-22(zeld): цйу; <br><hr>2022-09-15(zeld): ssss; </td>
 
 <!-- ********************************** Редактирование  ************************************************ -->
 <td><img id = "3606" data-modal = "write_comment" class="js-open-modal commentClass scale11" src="icons/table/change.png" alt="addCooment"></td> 
-      <!-- <td  class= "hidden_class_column"  id="markerLink $id"><img id = "$id" data-modal = "write_comment" class="js-open-modal commentClass" src="icons/table/change.png" alt="addCooment"></td>  -->
+
 <!-- ********************************** Дата следующего звонка  ********************************** -->
 
       <td id = "js-DateNextCall3606" width="60" class ="alarmcolor  hidden_class_column">2022-08-30</td>
@@ -707,13 +900,13 @@ function content_6332983e7ea4e4_92826207 (Smarty_Internal_Template $_smarty_tpl)
 <!-- ******************************  ИСТОРИ КП  *************************************  -->
      <td><a name="3606" href="reports_show_history_kp.php?typeQuery=5&id_kp=3606" target="_blank"><img class="scale11" src="icons/table/history_kp.png" style = "opacity: 0.6" alt="История КП" title="История КП"></a></td> 
 <!-- ****************************** Адрес поставки   ********************************************* -->
-      <td class="hidden_class_column" id = "js-Adress3606" width ="150" class="hidden_class_column">99</td>
+      <td class="hidden_class_column" id = "js-Adress3606" width ="150" class="hidden_class_column">pipofg</td>
                
        </tr>
     
            <tr class ="RedColor   DrawLight">
 <!-- ***************************  порядковый норме  ************************************************* -->
-               <td>7</td>
+               <td>9</td>
  <!-- ***************************  Номер КП  ********************************************* -->              
 
           
@@ -734,7 +927,12 @@ function content_6332983e7ea4e4_92826207 (Smarty_Internal_Template $_smarty_tpl)
          <td>2022-09-16</td>
                                       <!--   --> 
 <!-- ***************************  ИНН покупателя  ********************************************* -->        
-       <td width ="70" class=" hidden_class_column">7810489590</td>
+       <td width ="70" class=" hidden_class_column">
+                        <a href="show_comp_by_inn.php?inn=7810489590" target="_blank">
+                  7810489590
+            </a>
+            
+       </td>
 <!-- ***************************  PDF file  ***************************************** -->
 
           
@@ -756,11 +954,11 @@ function content_6332983e7ea4e4_92826207 (Smarty_Internal_Template $_smarty_tpl)
  <!-- ******************************  ПАПКА для открытия КП  *************************************  -->
      <td><a name="3607" href="index.php?id=3607" target="_blank"><img class="scale11" src="icons/table/open_dir.png" style = "opacity: 0.6" alt="OPEN" title="Открыть КП id=3607"></a></td> 
 <!-- ********************************** Комментарий  ************************************************ -->
-      <td id = "js-comment3607" class ="limit_width text_left">2022-09-22(zeld): 555555; <br><hr>2022-09-15(zeld): ertuyrtuy; 34563456; rty; ert; as; </td>
+      <td id = "js-comment3607" class ="limit_width text_left">2022-09-28(zeld): Созвонился с Андреем; Созвонился с Андреем; <br><hr>2022-09-22(zeld): 555555; <br><hr>2022-09-15(zeld): ertuyrtuy; 34563456; rty; ert; as; </td>
 
 <!-- ********************************** Редактирование  ************************************************ -->
 <td><img id = "3607" data-modal = "write_comment" class="js-open-modal commentClass scale11" src="icons/table/change.png" alt="addCooment"></td> 
-      <!-- <td  class= "hidden_class_column"  id="markerLink $id"><img id = "$id" data-modal = "write_comment" class="js-open-modal commentClass" src="icons/table/change.png" alt="addCooment"></td>  -->
+
 <!-- ********************************** Дата следующего звонка  ********************************** -->
 
       <td id = "js-DateNextCall3607" width="60" class ="alarmcolor  hidden_class_column"></td>
@@ -793,7 +991,7 @@ function content_6332983e7ea4e4_92826207 (Smarty_Internal_Template $_smarty_tpl)
     
            <tr class ="   DrawDark">
 <!-- ***************************  порядковый норме  ************************************************* -->
-               <td>8</td>
+               <td>10</td>
  <!-- ***************************  Номер КП  ********************************************* -->              
 
           
@@ -814,7 +1012,12 @@ function content_6332983e7ea4e4_92826207 (Smarty_Internal_Template $_smarty_tpl)
          <td>2022-09-16</td>
                                       <!--   --> 
 <!-- ***************************  ИНН покупателя  ********************************************* -->        
-       <td width ="70" class=" hidden_class_column">5018186852</td>
+       <td width ="70" class="sell_comp hidden_class_column">
+                        <a href="show_comp_by_inn.php?inn=5018186852" target="_blank">
+                  5018186852
+            </a>
+            
+       </td>
 <!-- ***************************  PDF file  ***************************************** -->
 
           
@@ -836,11 +1039,11 @@ function content_6332983e7ea4e4_92826207 (Smarty_Internal_Template $_smarty_tpl)
  <!-- ******************************  ПАПКА для открытия КП  *************************************  -->
      <td><a name="3623" href="index.php?id=3623" target="_blank"><img class="scale11" src="icons/table/open_dir.png" style = "opacity: 0.6" alt="OPEN" title="Открыть КП id=3623"></a></td> 
 <!-- ********************************** Комментарий  ************************************************ -->
-      <td id = "js-comment3623" class ="limit_width text_left">2022-09-22(zeld): ty hvbnm; tyutyu; r; </td>
+      <td id = "js-comment3623" class ="limit_width text_left">2022-09-28(zeld): Созвонился с Андреем; Созвонился с Андреем; Созвонился с Андреем; <br><hr>2022-09-22(zeld): ty hvbnm; tyutyu; r; </td>
 
 <!-- ********************************** Редактирование  ************************************************ -->
 <td><img id = "3623" data-modal = "write_comment" class="js-open-modal commentClass scale11" src="icons/table/change.png" alt="addCooment"></td> 
-      <!-- <td  class= "hidden_class_column"  id="markerLink $id"><img id = "$id" data-modal = "write_comment" class="js-open-modal commentClass" src="icons/table/change.png" alt="addCooment"></td>  -->
+
 <!-- ********************************** Дата следующего звонка  ********************************** -->
 
       <td id = "js-DateNextCall3623" width="60" class ="alarmcolor  hidden_class_column"></td>
@@ -873,7 +1076,7 @@ function content_6332983e7ea4e4_92826207 (Smarty_Internal_Template $_smarty_tpl)
     
            <tr class ="   DrawLight">
 <!-- ***************************  порядковый норме  ************************************************* -->
-               <td>9</td>
+               <td>11</td>
  <!-- ***************************  Номер КП  ********************************************* -->              
 
           
@@ -894,7 +1097,12 @@ function content_6332983e7ea4e4_92826207 (Smarty_Internal_Template $_smarty_tpl)
          <td>2022-09-16</td>
                                       <!--   --> 
 <!-- ***************************  ИНН покупателя  ********************************************* -->        
-       <td width ="70" class=" hidden_class_column">862002062408</td>
+       <td width ="70" class=" hidden_class_column">
+                        <a href="show_comp_by_inn.php?inn=862002062408" target="_blank">
+                  862002062408
+            </a>
+            
+       </td>
 <!-- ***************************  PDF file  ***************************************** -->
 
           
@@ -916,11 +1124,11 @@ function content_6332983e7ea4e4_92826207 (Smarty_Internal_Template $_smarty_tpl)
  <!-- ******************************  ПАПКА для открытия КП  *************************************  -->
      <td><a name="3611" href="index.php?id=3611" target="_blank"><img class="scale11" src="icons/table/open_dir.png" style = "opacity: 0.6" alt="OPEN" title="Открыть КП id=3611"></a></td> 
 <!-- ********************************** Комментарий  ************************************************ -->
-      <td id = "js-comment3611" class ="limit_width text_left"></td>
+      <td id = "js-comment3611" class ="limit_width text_left">2022-09-28(zeld): Созвонился с Андреем; </td>
 
 <!-- ********************************** Редактирование  ************************************************ -->
 <td><img id = "3611" data-modal = "write_comment" class="js-open-modal commentClass scale11" src="icons/table/change.png" alt="addCooment"></td> 
-      <!-- <td  class= "hidden_class_column"  id="markerLink $id"><img id = "$id" data-modal = "write_comment" class="js-open-modal commentClass" src="icons/table/change.png" alt="addCooment"></td>  -->
+
 <!-- ********************************** Дата следующего звонка  ********************************** -->
 
       <td id = "js-DateNextCall3611" width="60" class ="alarmcolor  hidden_class_column"></td>
@@ -953,7 +1161,7 @@ function content_6332983e7ea4e4_92826207 (Smarty_Internal_Template $_smarty_tpl)
     
            <tr class ="   DrawDark">
 <!-- ***************************  порядковый норме  ************************************************* -->
-               <td>10</td>
+               <td>12</td>
  <!-- ***************************  Номер КП  ********************************************* -->              
 
           
@@ -974,7 +1182,12 @@ function content_6332983e7ea4e4_92826207 (Smarty_Internal_Template $_smarty_tpl)
          <td>2022-09-16</td>
                                       <!--   --> 
 <!-- ***************************  ИНН покупателя  ********************************************* -->        
-       <td width ="70" class=" hidden_class_column">3627008639</td>
+       <td width ="70" class=" hidden_class_column">
+                        <a href="show_comp_by_inn.php?inn=3627008639" target="_blank">
+                  3627008639
+            </a>
+            
+       </td>
 <!-- ***************************  PDF file  ***************************************** -->
 
           
@@ -1000,7 +1213,7 @@ function content_6332983e7ea4e4_92826207 (Smarty_Internal_Template $_smarty_tpl)
 
 <!-- ********************************** Редактирование  ************************************************ -->
 <td><img id = "3609" data-modal = "write_comment" class="js-open-modal commentClass scale11" src="icons/table/change.png" alt="addCooment"></td> 
-      <!-- <td  class= "hidden_class_column"  id="markerLink $id"><img id = "$id" data-modal = "write_comment" class="js-open-modal commentClass" src="icons/table/change.png" alt="addCooment"></td>  -->
+
 <!-- ********************************** Дата следующего звонка  ********************************** -->
 
       <td id = "js-DateNextCall3609" width="60" class ="alarmcolor  hidden_class_column"></td>
@@ -1033,7 +1246,7 @@ function content_6332983e7ea4e4_92826207 (Smarty_Internal_Template $_smarty_tpl)
     
            <tr class ="RedColor   DrawLight">
 <!-- ***************************  порядковый норме  ************************************************* -->
-               <td>11</td>
+               <td>13</td>
  <!-- ***************************  Номер КП  ********************************************* -->              
 
           
@@ -1054,7 +1267,12 @@ function content_6332983e7ea4e4_92826207 (Smarty_Internal_Template $_smarty_tpl)
          <td>2022-09-15</td>
                                       <!--   --> 
 <!-- ***************************  ИНН покупателя  ********************************************* -->        
-       <td width ="70" class=" hidden_class_column">666666666666</td>
+       <td width ="70" class="sell_comp hidden_class_column">
+                        <a href="show_comp_by_inn.php?inn=666666666666" target="_blank">
+                  666666666666
+            </a>
+            
+       </td>
 <!-- ***************************  PDF file  ***************************************** -->
 
           
@@ -1080,7 +1298,7 @@ function content_6332983e7ea4e4_92826207 (Smarty_Internal_Template $_smarty_tpl)
 
 <!-- ********************************** Редактирование  ************************************************ -->
 <td><img id = "3596" data-modal = "write_comment" class="js-open-modal commentClass scale11" src="icons/table/change.png" alt="addCooment"></td> 
-      <!-- <td  class= "hidden_class_column"  id="markerLink $id"><img id = "$id" data-modal = "write_comment" class="js-open-modal commentClass" src="icons/table/change.png" alt="addCooment"></td>  -->
+
 <!-- ********************************** Дата следующего звонка  ********************************** -->
 
       <td id = "js-DateNextCall3596" width="60" class ="alarmcolor  hidden_class_column">2022-09-17</td>
@@ -1111,89 +1329,9 @@ function content_6332983e7ea4e4_92826207 (Smarty_Internal_Template $_smarty_tpl)
                
        </tr>
     
-           <tr class ="RedColor   DrawDark">
+           <tr class ="GreenColor   DrawDark">
 <!-- ***************************  порядковый норме  ************************************************* -->
-               <td>12</td>
- <!-- ***************************  Номер КП  ********************************************* -->              
-
-          
-       <td>87875</td> 
-         
-
-<!-- ***************************  EXCEL файл  ********************************************** -->   
-
-          
-       <td><img style = "opacity: 0.2" src="icons/table/excel.png" alt="Excel"></td>
-         
-<! -- Проверяем есть ли файл с КП в формате ексель на сервере ************************************** -->
-<! -- Скачиваем счет -->
-      <td><img style = "opacity: 0.2" src="icons/table/schet.png" alt="Excel"></td>
-        
-
-<!-- ***************************  Дата КП  ************************************************* -->          
-         <td>2022-09-15</td>
-                                      <!--   --> 
-<!-- ***************************  ИНН покупателя  ********************************************* -->        
-       <td width ="70" class=" hidden_class_column">666666666666</td>
-<!-- ***************************  PDF file  ***************************************** -->
-
-          
-       <td><img style = "opacity: 0.2" src="icons/table/pdf.png" alt="Excel"></td>
-         
-
-
-<!-- ***************************  Наименование покупателя  ***************************************** -->
-                          <td width ="150">Горсвет зажчс авап</td>
-             
-<!-- ******************************  Icons Email  *********************************************** -->
-      <td><a href= "mailer/login_mail.php?id=3595&InnCustomer=666666666666" target="_blank"><img class="scale11" style = "opacity: 0.8" src="icons/table/email.png" alt="SeeKp"></a></td>
-  <!-- ********************************** ВАЖНОСТЬ КП ************************************************ -->
-      <td  class="hidden_class_column" id = "js-KpImportance3595" width ="50" class="hidden_class_column">Важно</td>     
-
- <!-- ********************************** ОТветственный  ************************************************ -->
-     <td id= "js-Responsible3595" width="80" class="hidden_class_column"></td>
-
- <!-- ******************************  ПАПКА для открытия КП  *************************************  -->
-     <td><a name="3595" href="index.php?id=3595" target="_blank"><img class="scale11" src="icons/table/open_dir.png" style = "opacity: 0.6" alt="OPEN" title="Открыть КП id=3595"></a></td> 
-<!-- ********************************** Комментарий  ************************************************ -->
-      <td id = "js-comment3595" class ="limit_width text_left">2022-09-22(zeld): dfgsgsdf; 321; </td>
-
-<!-- ********************************** Редактирование  ************************************************ -->
-<td><img id = "3595" data-modal = "write_comment" class="js-open-modal commentClass scale11" src="icons/table/change.png" alt="addCooment"></td> 
-      <!-- <td  class= "hidden_class_column"  id="markerLink $id"><img id = "$id" data-modal = "write_comment" class="js-open-modal commentClass" src="icons/table/change.png" alt="addCooment"></td>  -->
-<!-- ********************************** Дата следующего звонка  ********************************** -->
-
-      <td id = "js-DateNextCall3595" width="60" class ="alarmcolor  hidden_class_column"></td>
-<!-- ********************************** СОСТОЯНИЕ КП ********************************** -->
-      <td class="hidden_class_column"> <div id = "js-KpCondition3595" class = ""></div></td>
-<!-- ********************************** СУММА КП ********************************** -->      
-      <td id = "js-KpSum3595" >11,709,518</td>
- <!-- ********************************** СУММА ТЕНДЕРА  ********************************** -->      
-      <td class="hidden_class_column">0</td>
-
-<!-- ********************************** Дата окончания выполнения контракта ********************** -->
-        <td class="hidden_class_column" id = "js-dateContract3595">
-        <img style = "opacity: 0.2" src="icons/table/dateContract.png" title="Нет данных">
-        </td>
-
-       
-      
-
-<!-- ******************************  ФИНИШ Контракта   ********************************************* -->
-    <td class="hidden_class_column" id = "js-FinishContract3595" >0</td>
-<!-- ******************************  ФИНИШ Контракта   ********************************************* -->
-      <td class="hidden_class_column" id = "js-dateFinishContract3595" width="60"></td>
-
-<!-- ******************************  ИСТОРИ КП  *************************************  -->
-     <td><a name="3595" href="reports_show_history_kp.php?typeQuery=5&id_kp=3595" target="_blank"><img class="scale11" src="icons/table/history_kp.png" style = "opacity: 0.6" alt="История КП" title="История КП"></a></td> 
-<!-- ****************************** Адрес поставки   ********************************************* -->
-      <td class="hidden_class_column" id = "js-Adress3595" width ="150" class="hidden_class_column">москва</td>
-               
-       </tr>
-    
-           <tr class ="GreenColor   DrawLight">
-<!-- ***************************  порядковый норме  ************************************************* -->
-               <td>13</td>
+               <td>14</td>
  <!-- ***************************  Номер КП  ********************************************* -->              
 
           
@@ -1214,7 +1352,10 @@ function content_6332983e7ea4e4_92826207 (Smarty_Internal_Template $_smarty_tpl)
          <td>2022-09-15</td>
                                       <!--   --> 
 <!-- ***************************  ИНН покупателя  ********************************************* -->        
-       <td width ="70" class="sell_comp hidden_class_column">0</td>
+       <td width ="70" class="sell_comp hidden_class_column">
+                              &nbsp
+            
+       </td>
 <!-- ***************************  PDF file  ***************************************** -->
 
           
@@ -1240,7 +1381,7 @@ function content_6332983e7ea4e4_92826207 (Smarty_Internal_Template $_smarty_tpl)
 
 <!-- ********************************** Редактирование  ************************************************ -->
 <td><img id = "3597" data-modal = "write_comment" class="js-open-modal commentClass scale11" src="icons/table/change.png" alt="addCooment"></td> 
-      <!-- <td  class= "hidden_class_column"  id="markerLink $id"><img id = "$id" data-modal = "write_comment" class="js-open-modal commentClass" src="icons/table/change.png" alt="addCooment"></td>  -->
+
 <!-- ********************************** Дата следующего звонка  ********************************** -->
 
       <td id = "js-DateNextCall3597" width="60" class ="alarmcolor  hidden_class_column"></td>
@@ -1271,9 +1412,9 @@ function content_6332983e7ea4e4_92826207 (Smarty_Internal_Template $_smarty_tpl)
                
        </tr>
     
-           <tr class ="   DrawDark">
+           <tr class ="   DrawLight">
 <!-- ***************************  порядковый норме  ************************************************* -->
-               <td>14</td>
+               <td>15</td>
  <!-- ***************************  Номер КП  ********************************************* -->              
 
           
@@ -1294,7 +1435,12 @@ function content_6332983e7ea4e4_92826207 (Smarty_Internal_Template $_smarty_tpl)
          <td>2022-09-08</td>
                                       <!--   --> 
 <!-- ***************************  ИНН покупателя  ********************************************* -->        
-       <td width ="70" class=" hidden_class_column">234</td>
+       <td width ="70" class=" hidden_class_column">
+                        <a href="show_comp_by_inn.php?inn=234" target="_blank">
+                  234
+            </a>
+            
+       </td>
 <!-- ***************************  PDF file  ***************************************** -->
 
           
@@ -1320,7 +1466,7 @@ function content_6332983e7ea4e4_92826207 (Smarty_Internal_Template $_smarty_tpl)
 
 <!-- ********************************** Редактирование  ************************************************ -->
 <td><img id = "3608" data-modal = "write_comment" class="js-open-modal commentClass scale11" src="icons/table/change.png" alt="addCooment"></td> 
-      <!-- <td  class= "hidden_class_column"  id="markerLink $id"><img id = "$id" data-modal = "write_comment" class="js-open-modal commentClass" src="icons/table/change.png" alt="addCooment"></td>  -->
+
 <!-- ********************************** Дата следующего звонка  ********************************** -->
 
       <td id = "js-DateNextCall3608" width="60" class ="alarmcolor  hidden_class_column"></td>
@@ -1351,9 +1497,9 @@ function content_6332983e7ea4e4_92826207 (Smarty_Internal_Template $_smarty_tpl)
                
        </tr>
     
-           <tr class ="   DrawLight">
+           <tr class ="   DrawDark">
 <!-- ***************************  порядковый норме  ************************************************* -->
-               <td>15</td>
+               <td>16</td>
  <!-- ***************************  Номер КП  ********************************************* -->              
 
           
@@ -1374,7 +1520,12 @@ function content_6332983e7ea4e4_92826207 (Smarty_Internal_Template $_smarty_tpl)
          <td>2022-03-09</td>
                                       <!--   --> 
 <!-- ***************************  ИНН покупателя  ********************************************* -->        
-       <td width ="70" class=" hidden_class_column">3525395322</td>
+       <td width ="70" class=" hidden_class_column">
+                        <a href="show_comp_by_inn.php?inn=3525395322" target="_blank">
+                  3525395322
+            </a>
+            
+       </td>
 <!-- ***************************  PDF file  ***************************************** -->
 
           
@@ -1402,12 +1553,12 @@ function content_6332983e7ea4e4_92826207 (Smarty_Internal_Template $_smarty_tpl)
 
 <!-- ********************************** Редактирование  ************************************************ -->
 <td><img id = "3208" data-modal = "write_comment" class="js-open-modal commentClass scale11" src="icons/table/change.png" alt="addCooment"></td> 
-      <!-- <td  class= "hidden_class_column"  id="markerLink $id"><img id = "$id" data-modal = "write_comment" class="js-open-modal commentClass" src="icons/table/change.png" alt="addCooment"></td>  -->
+
 <!-- ********************************** Дата следующего звонка  ********************************** -->
 
       <td id = "js-DateNextCall3208" width="60" class ="alarmcolor  hidden_class_column">2022-04-04</td>
 <!-- ********************************** СОСТОЯНИЕ КП ********************************** -->
-      <td class="hidden_class_column"> <div id = "js-KpCondition3208" class = "">$KpCondition</div></td>
+      <td class="hidden_class_column"> <div id = "js-KpCondition3208" class = "">В работе</div></td>
 <!-- ********************************** СУММА КП ********************************** -->      
       <td id = "js-KpSum3208" >332,800</td>
  <!-- ********************************** СУММА ТЕНДЕРА  ********************************** -->      
@@ -1431,9 +1582,9 @@ function content_6332983e7ea4e4_92826207 (Smarty_Internal_Template $_smarty_tpl)
                
        </tr>
     
-           <tr class ="   DrawDark">
+           <tr class ="   DrawLight">
 <!-- ***************************  порядковый норме  ************************************************* -->
-               <td>16</td>
+               <td>17</td>
  <!-- ***************************  Номер КП  ********************************************* -->              
 
           
@@ -1454,7 +1605,12 @@ function content_6332983e7ea4e4_92826207 (Smarty_Internal_Template $_smarty_tpl)
          <td>2022-03-04</td>
                                       <!--   --> 
 <!-- ***************************  ИНН покупателя  ********************************************* -->        
-       <td width ="70" class=" hidden_class_column">6820036862</td>
+       <td width ="70" class=" hidden_class_column">
+                        <a href="show_comp_by_inn.php?inn=6820036862" target="_blank">
+                  6820036862
+            </a>
+            
+       </td>
 <!-- ***************************  PDF file  ***************************************** -->
 
           
@@ -1481,7 +1637,7 @@ function content_6332983e7ea4e4_92826207 (Smarty_Internal_Template $_smarty_tpl)
 
 <!-- ********************************** Редактирование  ************************************************ -->
 <td><img id = "3203" data-modal = "write_comment" class="js-open-modal commentClass scale11" src="icons/table/change.png" alt="addCooment"></td> 
-      <!-- <td  class= "hidden_class_column"  id="markerLink $id"><img id = "$id" data-modal = "write_comment" class="js-open-modal commentClass" src="icons/table/change.png" alt="addCooment"></td>  -->
+
 <!-- ********************************** Дата следующего звонка  ********************************** -->
 
       <td id = "js-DateNextCall3203" width="60" class ="alarmcolor  hidden_class_column"></td>
@@ -1510,9 +1666,9 @@ function content_6332983e7ea4e4_92826207 (Smarty_Internal_Template $_smarty_tpl)
                
        </tr>
     
-           <tr class ="   DrawLight">
+           <tr class ="   DrawDark">
 <!-- ***************************  порядковый норме  ************************************************* -->
-               <td>17</td>
+               <td>18</td>
  <!-- ***************************  Номер КП  ********************************************* -->              
 
           
@@ -1533,7 +1689,12 @@ function content_6332983e7ea4e4_92826207 (Smarty_Internal_Template $_smarty_tpl)
          <td>2022-03-03</td>
                                       <!--   --> 
 <!-- ***************************  ИНН покупателя  ********************************************* -->        
-       <td width ="70" class=" hidden_class_column">310259684507</td>
+       <td width ="70" class=" hidden_class_column">
+                        <a href="show_comp_by_inn.php?inn=310259684507" target="_blank">
+                  310259684507
+            </a>
+            
+       </td>
 <!-- ***************************  PDF file  ***************************************** -->
 
           
@@ -1560,7 +1721,7 @@ function content_6332983e7ea4e4_92826207 (Smarty_Internal_Template $_smarty_tpl)
 
 <!-- ********************************** Редактирование  ************************************************ -->
 <td><img id = "3197" data-modal = "write_comment" class="js-open-modal commentClass scale11" src="icons/table/change.png" alt="addCooment"></td> 
-      <!-- <td  class= "hidden_class_column"  id="markerLink $id"><img id = "$id" data-modal = "write_comment" class="js-open-modal commentClass" src="icons/table/change.png" alt="addCooment"></td>  -->
+
 <!-- ********************************** Дата следующего звонка  ********************************** -->
 
       <td id = "js-DateNextCall3197" width="60" class ="alarmcolor  hidden_class_column"></td>
@@ -1589,9 +1750,9 @@ function content_6332983e7ea4e4_92826207 (Smarty_Internal_Template $_smarty_tpl)
                
        </tr>
     
-           <tr class ="RedColor   DrawDark">
+           <tr class ="RedColor   DrawLight">
 <!-- ***************************  порядковый норме  ************************************************* -->
-               <td>18</td>
+               <td>19</td>
  <!-- ***************************  Номер КП  ********************************************* -->              
 
           
@@ -1612,7 +1773,12 @@ function content_6332983e7ea4e4_92826207 (Smarty_Internal_Template $_smarty_tpl)
          <td>2022-03-03</td>
                                       <!--   --> 
 <!-- ***************************  ИНН покупателя  ********************************************* -->        
-       <td width ="70" class=" hidden_class_column">7810489590</td>
+       <td width ="70" class=" hidden_class_column">
+                        <a href="show_comp_by_inn.php?inn=7810489590" target="_blank">
+                  7810489590
+            </a>
+            
+       </td>
 <!-- ***************************  PDF file  ***************************************** -->
 
           
@@ -1635,11 +1801,11 @@ function content_6332983e7ea4e4_92826207 (Smarty_Internal_Template $_smarty_tpl)
  <!-- ******************************  ПАПКА для открытия КП  *************************************  -->
      <td><a name="3195" href="index.php?id=3195" target="_blank"><img class="scale11" src="icons/table/open_dir.png" style = "opacity: 0.6" alt="OPEN" title="Открыть КП id=3195"></a></td> 
 <!-- ********************************** Комментарий  ************************************************ -->
-      <td id = "js-comment3195" class ="limit_width text_left">2022-09-15(zeld): 34523452345; <br><hr>2022-03-11(guts): трубки не берут, дубль кп на почту.; </td>
+      <td id = "js-comment3195" class ="limit_width text_left">2022-10-04(zeld): ghmcbmnbnm; <br><hr>2022-09-28(zeld): ДДДДДОООРРРРТТТИ; <br><hr>2022-09-15(zeld): 34523452345; <br><hr>2022-03-11(guts): трубки не берут, дубль кп на почту.; </td>
 
 <!-- ********************************** Редактирование  ************************************************ -->
 <td><img id = "3195" data-modal = "write_comment" class="js-open-modal commentClass scale11" src="icons/table/change.png" alt="addCooment"></td> 
-      <!-- <td  class= "hidden_class_column"  id="markerLink $id"><img id = "$id" data-modal = "write_comment" class="js-open-modal commentClass" src="icons/table/change.png" alt="addCooment"></td>  -->
+
 <!-- ********************************** Дата следующего звонка  ********************************** -->
 
       <td id = "js-DateNextCall3195" width="60" class ="alarmcolor  hidden_class_column"></td>
@@ -1668,9 +1834,9 @@ function content_6332983e7ea4e4_92826207 (Smarty_Internal_Template $_smarty_tpl)
                
        </tr>
     
-           <tr class ="   DrawLight">
+           <tr class ="   DrawDark">
 <!-- ***************************  порядковый норме  ************************************************* -->
-               <td>19</td>
+               <td>20</td>
  <!-- ***************************  Номер КП  ********************************************* -->              
 
           
@@ -1691,7 +1857,12 @@ function content_6332983e7ea4e4_92826207 (Smarty_Internal_Template $_smarty_tpl)
          <td>2022-02-21</td>
                                       <!--   --> 
 <!-- ***************************  ИНН покупателя  ********************************************* -->        
-       <td width ="70" class=" hidden_class_column">5610004196</td>
+       <td width ="70" class=" hidden_class_column">
+                        <a href="show_comp_by_inn.php?inn=5610004196" target="_blank">
+                  5610004196
+            </a>
+            
+       </td>
 <!-- ***************************  PDF file  ***************************************** -->
 
           
@@ -1719,7 +1890,7 @@ function content_6332983e7ea4e4_92826207 (Smarty_Internal_Template $_smarty_tpl)
 
 <!-- ********************************** Редактирование  ************************************************ -->
 <td><img id = "3156" data-modal = "write_comment" class="js-open-modal commentClass scale11" src="icons/table/change.png" alt="addCooment"></td> 
-      <!-- <td  class= "hidden_class_column"  id="markerLink $id"><img id = "$id" data-modal = "write_comment" class="js-open-modal commentClass" src="icons/table/change.png" alt="addCooment"></td>  -->
+
 <!-- ********************************** Дата следующего звонка  ********************************** -->
 
       <td id = "js-DateNextCall3156" width="60" class ="alarmcolor  hidden_class_column">2022-05-17</td>
@@ -1748,9 +1919,9 @@ function content_6332983e7ea4e4_92826207 (Smarty_Internal_Template $_smarty_tpl)
                
        </tr>
     
-           <tr class ="   DrawDark">
+           <tr class ="   DrawLight">
 <!-- ***************************  порядковый норме  ************************************************* -->
-               <td>20</td>
+               <td>21</td>
  <!-- ***************************  Номер КП  ********************************************* -->              
 
           
@@ -1771,7 +1942,12 @@ function content_6332983e7ea4e4_92826207 (Smarty_Internal_Template $_smarty_tpl)
          <td>2022-02-16</td>
                                       <!--   --> 
 <!-- ***************************  ИНН покупателя  ********************************************* -->        
-       <td width ="70" class=" hidden_class_column">7736279690</td>
+       <td width ="70" class=" hidden_class_column">
+                        <a href="show_comp_by_inn.php?inn=7736279690" target="_blank">
+                  7736279690
+            </a>
+            
+       </td>
 <!-- ***************************  PDF file  ***************************************** -->
 
           
@@ -1798,7 +1974,7 @@ function content_6332983e7ea4e4_92826207 (Smarty_Internal_Template $_smarty_tpl)
 
 <!-- ********************************** Редактирование  ************************************************ -->
 <td><img id = "3154" data-modal = "write_comment" class="js-open-modal commentClass scale11" src="icons/table/change.png" alt="addCooment"></td> 
-      <!-- <td  class= "hidden_class_column"  id="markerLink $id"><img id = "$id" data-modal = "write_comment" class="js-open-modal commentClass" src="icons/table/change.png" alt="addCooment"></td>  -->
+
 <!-- ********************************** Дата следующего звонка  ********************************** -->
 
       <td id = "js-DateNextCall3154" width="60" class ="alarmcolor  hidden_class_column"></td>
@@ -1833,18 +2009,125 @@ function content_6332983e7ea4e4_92826207 (Smarty_Internal_Template $_smarty_tpl)
 </div>
 
 
-  <!-- Корректировка данных о Компании -->
-<!--    Добавление НОВОГО НОМЕРА телефона -->
-
- 
-
-<!--  *******************   ******** Корректировка телефонного номера -->
-<!-- *********************************// корректировка EMAIL /////////************************* -->
- 
-<!-- ***********************************// Добавление НОВОГО EMAIL  ///////// -->
  <!-- модальные окна для правки по ИНН  -->
 
+ <!-- модальные окна для вставки телефонов -->
 
+  <div class="dm-overlay js-modal " data-modal = "write_comment">
+     <div class="dm-table">
+          <div class="dm-cell">
+              <div class="dm-modal"  >
+                  <!-- <a href="#close" class="close js-modal-close"></a> -->
+                  <a class="close js-modal-close"></a>
+
+  <div>
+    <select id = "js-id" name="id">
+      <option id ="js-new-modal-id" value ="$id"></option>
+            
+    </select>
+  </div>
+
+ <div><b> Номер КП : <span id="js-new-modal-KpNumber">$KpNumber</span></b></div>
+
+  
+ <div>ИНН Заказчика :<span id="js-new-modal-InnCustomer">$InnCustomer</span></div>
+ <div><b>Наименование Заказчика :<span id="js-new-modal-NameCustomer">$NameCustomer</span></b></div>
+  <hr>
+<div>ID  закупки :<span id="js-new-modal-idKp">$idKp</span></div>
+  <hr>
+     
+<div> 
+<p>Важность :
+    <select id="KpImportance" size="1" name="KpImportance">
+      <option id="js-new-modal-KpImportance" selected value=""></option>  
+      <option value="Нейтрально">Нейтрально</option>
+      <option value="Важно">Важно</option>
+      <option on value="Очень важно">Очень важно</option>
+    </select>
+</p>
+ </div>
+
+<div> 
+  <p>Ответственный
+    <select id="Responsible" size="1" name="Responsible">
+        <option id="js-new-modal-Responsible" selected value = ""></option>
+           <option value="Зелизко">Зелизко</option>
+<option value="Горячев">Горячев</option>
+<option value="Гуц">Гуц</option>
+<option value="Штыбко">Штыбко</option>
+<option value="Кулиев">Кулиев</option>
+<option value="Лобов">Лобов</option>
+
+
+     </select>
+  </p>
+</div>
+   <hr>
+
+<div> 
+    <p>Комментарий :<span id="js-new-modal-Comment">$Comment</span></p>
+      <p id="Comment">    
+         <textarea id="textarea-Comment" name="Comment" rows="2" cols="50"></textarea>
+      </p>
+</div>
+<hr>
+
+<div> 
+    <p >Дата след.Звонка <input id="DateNextCall" type="date" name="DateNextCall" value ="$DateNextCall"></p>
+</div>
+
+
+<div> 
+  <p>Состояние КП
+    <select id="KpCondition" size="1" name="KpCondition">
+        <option id="js-new-modal-KpCondition" selected value = ""></option>
+       <option value="В работе">В работе</option>
+<option value="Не требуется">Не требуется</option>
+<option value="Купили у нас">Купили у нас</option>
+<option value="Уже купили">Уже купили</option>
+<option value="Перенос на сл.год">Перенос на сл.год</option>
+
+
+
+        </select>
+  </p>
+</div>
+<div><p>Сумма КП  <input type="number" id="KpSum" name="KpSum" value ="$KpSum"></p></div>
+<div><p>НМЦК Тендера КП : <span id="js-new-modal-TenderSum">$TenderSum</span></p></div>
+<hr>
+
+<div> 
+    <p>Дата заключения Контакта <input id="dateContract" type="date" name="dateContract" value ="$dateContract">
+    Процент выполнения  <input type="number" id="procent_work" name="procent_work" value ="$procent_work"></p>
+    <p>Дата окончания Контакта <input id="dateFinishContract" type="date" name="dateFinishContract" value ="$dateFinishContract"></p>
+</div>
+<hr>
+
+<div> 
+  <p>Контракт закрыт 
+    <select id="FinishContract" size="1" name="FinishContract">
+      <!-- <option id="js-new-modal-FinishContract" selected value = "$FinishContract">$FinishContract</option> -->
+      <option value="0">Контракт НЕ закрыт</option>
+      <option value="1">Контракт закрыт</option>
+  </select>
+  </p>
+</div>
+
+<div> 
+  <p>Адрес поставки : </p> 
+  <textarea id="textarea-Adress" name="Adress" rows="1" cols="50"><span id="js-new-modal-Adress">$Adress</span></textarea>
+</div>
+<div class="container-for-btn">
+<div class = "btncommentClass button">СОХРАНИТЬ</div>                
+</div>    
+
+              
+       
+
+              </div>
+          </div>
+      </div>
+  </div> <!-- модальные окна для изменения инорфмаци d КП -->
 <script type="text/javascript" src="js/ajax_query_comment.js"></script>
 <script type="text/javascript" src="js/modal.js"></script>
 <script type="text/javascript" src="js/phone_mask.js"></script>

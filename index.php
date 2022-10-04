@@ -50,12 +50,13 @@ require_once "smarty_docs/_include_folder_files.php";
 // меню для пользователя
 $smarty->display('user_menu.tpl');
 // модальное окно для корректировки данных по всей закупке
-$smarty->display('modal_change_all_zakup.tpl');
+$smarty->display('_include_modal.tpl');
 
 // ****************** Если нужно показать только одно КП по id  *************************
 
 if ($id <> '') {
     require_once "show_one_kp.php";
+
 } else { // ****************** Если нужно показать КП по фильтру  *************************
     $pageName='Базовая страница страница';
     $smarty->assign("pageName", $pageName);
@@ -80,7 +81,7 @@ if ($id <> '') {
             // require_once ("bodyparts/modal.php"); // всплывающие окна
     // require_once "bodyparts/modal_change_all.php";
             // require_once ("bodyparts/modal_change_inn.php"); // всплывающие окна
-            require_once ("bodyparts/footer.php"); // подвал страниы
+            // require_once ("bodyparts/footer.php"); // подвал страниы
         }
     }
 else

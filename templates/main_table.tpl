@@ -63,7 +63,16 @@
          <td>{$array_with_all_kp.$i.KpData}</td>
                                       <!--   --> 
 <!-- ***************************  ИНН покупателя  ********************************************* -->        
-       <td width ="70" class="{$second_sell_cl.$i} hidden_class_column">{$array_with_all_kp.$i.InnCustomer}</td>
+       <td width ="70" class="{$second_sell_cl.$i} hidden_class_column">
+            {if $array_with_all_kp.$i.InnCustomer <> 0}
+            <a href="show_comp_by_inn.php?inn={$array_with_all_kp.$i.InnCustomer}" target="_blank">
+                  {$array_with_all_kp.$i.InnCustomer}
+            </a>
+            {else}
+                  &nbsp
+            {/if}
+
+       </td>
 <!-- ***************************  PDF file  ***************************************** -->
 
          {if ({$exist_pdf_file.$i} == 1) }
@@ -95,7 +104,7 @@
 
 <!-- ********************************** Редактирование  ************************************************ -->
 <td><img id = "{$array_with_all_kp.$i.id}" data-modal = "write_comment" class="js-open-modal commentClass scale11" src="icons/table/change.png" alt="addCooment"></td> 
-      <!-- <td  class= "hidden_class_column"  id="markerLink $id"><img id = "$id" data-modal = "write_comment" class="js-open-modal commentClass" src="icons/table/change.png" alt="addCooment"></td>  -->
+
 <!-- ********************************** Дата следующего звонка  ********************************** -->
 
       <td id = "js-DateNextCall{$array_with_all_kp.$i.id}" width="60" class ="{$DateNextCallTable.$i}  hidden_class_column">{$array_with_all_kp.$i.DateNextCall}</td>

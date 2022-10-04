@@ -145,6 +145,8 @@
              <td width ="200">{$company_arr[0]['contactFace']}</td>
              <td>{$company_arr[0]['adress']}</td>
              <td>{$company_arr[0]['comment']}</td>
+
+<!-- *********************  Корректировка данных компании ********************* -->
              <td width="20">
              <a href="?id={$id}&typeQuery=200#win8" class="btn"><img style = "opacity: 0.9" src="icons/table/change.png" alt="formatZakup"></a>
              </td>

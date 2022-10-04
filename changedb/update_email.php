@@ -67,7 +67,8 @@ $db_comment.=" актуал :".$actual.";";
   //  }
 
 
-header ("Location: ../index.php?id=".$id);  // перенаправление на нужную страницу
+// header ("Location: ../index.php?id=".$id);  // перенаправление на нужную страницу
+header ("Location: ../select_transiton.php?id=".$id."&inn=".$inn);
 exit();    // прерываем работу скрипта, чтобы забыл о прошлом
 
 

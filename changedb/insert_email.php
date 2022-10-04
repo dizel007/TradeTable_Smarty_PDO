@@ -76,7 +76,8 @@ if (isset($email_db)) {
      }
 
 
-header ("Location: ../index.php?id=".$id);  // перенаправление на нужную страницу
+// header ("Location: ../index.php?id=".$id);  // перенаправление на нужную страницу
+header ("Location: ../select_transiton.php?id=".$id."&inn=".$inn);
 exit();    // прерываем работу скрипта, чтобы забыл о прошлом
 
 
