@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.1.0, created on 2022-10-12 13:22:24
+/* Smarty version 4.1.0, created on 2022-10-12 12:35:05
   from 'C:\xampp\htdocs\TradeTable_Smarty_PDO\templates\razdelitel.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.1.0',
-  'unifunc' => 'content_6346a3706eabe6_78501475',
+  'unifunc' => 'content_6346985905d605_19004442',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -16,14 +16,9 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
       2 => 'file',
     ),
   ),
-  'includes' => 
-  array (
-  ),
-),false)) {
-function content_6346a3706eabe6_78501475 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->compiled->nocache_hash = '11781314456346a3706e6d65_71530244';
+  'cache_lifetime' => 120,
+),true)) {
+function content_6346985905d605_19004442 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
-
-<h3 class="text-center"><?php echo $_smarty_tpl->tpl_vars['razdelitel']->value;?>
-</h3><?php }
+<h3 class="text-center">КП высланные в эту компанию</h3><?php }
 }

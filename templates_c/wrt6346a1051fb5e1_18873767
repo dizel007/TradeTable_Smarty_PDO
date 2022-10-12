@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.1.0, created on 2022-10-12 16:18:41
+/* Smarty version 4.1.0, created on 2022-10-12 14:12:05
   from 'C:\xampp\htdocs\TradeTable_Smarty_PDO\templates\modal\modal_update_infocomp.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.1.0',
-  'unifunc' => 'content_6346beb1c17475_39071173',
+  'unifunc' => 'content_6346a1051f7767_78155723',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,8 +20,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6346beb1c17475_39071173 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->compiled->nocache_hash = '20727423936346beb1c0f770_65812883';
+function content_6346a1051f7767_78155723 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->compiled->nocache_hash = '8477691916346a1051ebbe7_65256544';
 ?>
 <!-- Корректировка данных о Компании -->
 <?php if (($_smarty_tpl->tpl_vars['typeQuery']->value == 200)) {?>

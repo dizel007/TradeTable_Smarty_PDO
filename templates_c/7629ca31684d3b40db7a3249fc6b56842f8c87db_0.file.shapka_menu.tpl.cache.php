@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.1.0, created on 2022-10-12 14:30:43
+/* Smarty version 4.1.0, created on 2022-10-12 16:18:41
   from 'C:\xampp\htdocs\TradeTable_Smarty_PDO\templates\shapka_menu.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.1.0',
-  'unifunc' => 'content_6346a563771ad5_65453710',
+  'unifunc' => 'content_6346beb1c61804_47611787',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -16,10 +16,15 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
       2 => 'file',
     ),
   ),
-  'cache_lifetime' => 120,
-),true)) {
-function content_6346a563771ad5_65453710 (Smarty_Internal_Template $_smarty_tpl) {
-?> 
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_6346beb1c61804_47611787 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\xampp\\htdocs\\TradeTable_Smarty_PDO\\libs\\plugins\\function.html_options.php','function'=>'smarty_function_html_options',),));
+$_smarty_tpl->compiled->nocache_hash = '14865003476346beb1c55c87_10682951';
+?>
+ 
  <div class="reset_button">
   <a href="index.php" title="Вернуться к началу страницы">СБРОС</a>
 </div> 
@@ -44,29 +49,34 @@ function content_6346a563771ad5_65453710 (Smarty_Internal_Template $_smarty_tpl)
      
         <div id="g_nomerKP" class="mobile_web">
             <label for="param"> Введите номер КП : </label>
-            <input type="text" id="get_nomerKP" name="get_nomerKP" value = "">
+            <input type="text" id="get_nomerKP" name="get_nomerKP" value = "<?php echo $_smarty_tpl->tpl_vars['get_nomerKP']->value;?>
+">
         
         </div>
 
                 <div id="g_dateKPs" class="mobile_web">
                     <label for="date_start">Дата начала : </label>
-                    <input type="date" id="get_date_start" name="get_date_start" value = "">
+                    <input type="date" id="get_date_start" name="get_date_start" value = "<?php echo $_smarty_tpl->tpl_vars['get_date_start']->value;?>
+">
                 </div>
                 <div id="g_dateKPe" class="mobile_web">
                     <label for="date_end">Дата окончания : </label>
-                    <input type="date" id="get_date_end" name="get_date_end" value = "">
+                    <input type="date" id="get_date_end" name="get_date_end" value = "<?php echo $_smarty_tpl->tpl_vars['get_date_end']->value;?>
+">
                 </div>
         
      
         <div id="g_inn" class="mobile_web">
             <label for="param">Введите ИНН : </label>
-            <input type="text" id="get_inn" name="get_inn" value = "">
+            <input type="text" id="get_inn" name="get_inn" value = "<?php echo $_smarty_tpl->tpl_vars['get_inn']->value;?>
+">
         </div>
 
      
         <div id="g_id_kp" class="mobile_web">
             <label for="param"> Введите ID КП : </label>
-            <input type="text" id="get_id_kp" name="get_id_kp" value = "">
+            <input type="text" id="get_id_kp" name="get_id_kp" value = "<?php echo $_smarty_tpl->tpl_vars['get_id_kp']->value;?>
+">
         
         </div>
 
@@ -74,13 +84,10 @@ function content_6346a563771ad5_65453710 (Smarty_Internal_Template $_smarty_tpl)
  <div id="g_responsible" class="mobile_web" >
 Ответственный :
     <select style="width:150px;" id="get_responsible" class="form-select data-windows" name="get_responsible" size="1">
-        <option selected value=""></option>
-         <option value="Зелизко">Зелизко</option>
-<option value="Горячев">Горячев</option>
-<option value="Гуц">Гуц</option>
-<option value="Штыбко">Штыбко</option>
-<option value="Кулиев">Кулиев</option>
-<option value="Лобов">Лобов</option>
+        <option selected value="<?php echo $_smarty_tpl->tpl_vars['get_responsible']->value;?>
+"><?php echo $_smarty_tpl->tpl_vars['get_responsible']->value;?>
+</option>
+         <?php echo smarty_function_html_options(array('values'=>$_smarty_tpl->tpl_vars['active_users_arr_smarty']->value,'output'=>$_smarty_tpl->tpl_vars['active_users_arr_smarty']->value),$_smarty_tpl);?>
 
          <option value=""></option>
          
@@ -89,22 +96,28 @@ function content_6346a563771ad5_65453710 (Smarty_Internal_Template $_smarty_tpl)
      
         <div id="g_name_zakazchik" class="mobile_web">
             <label for="param"> Наименование Заказчика : </label>
-            <input type="text" id="get_name_zakazchik" name="get_name_zakazchik" value = "">
+            <input type="text" id="get_name_zakazchik" name="get_name_zakazchik" value = "<?php echo $_smarty_tpl->tpl_vars['get_name_zakazchik']->value;?>
+">
    
         </div>
 
      
         <div id="g_adres_postavki" class="mobile_web">
             <label for="param"> Адрес поставки : </label>
-            <input type="text" id="get_adres_postavki" name="get_adres_postavki" value = "">
+            <input type="text" id="get_adres_postavki" name="get_adres_postavki" value = "<?php echo $_smarty_tpl->tpl_vars['get_adres_postavki']->value;?>
+">
       
         </div>
 
        
         <div class="mobile_web">
             <label for="FinishContract">Закр.Перенос Контр : </label>
-                                            <input type="checkbox" name="get_FinishContract" value="1">
-                           </div>
+                    <?php if ($_smarty_tpl->tpl_vars['get_FinishContract']->value == 1) {?>            
+                    <input type="checkbox" name="get_FinishContract" value="1" checked>
+                    <?php } else { ?>
+                        <input type="checkbox" name="get_FinishContract" value="1">
+                    <?php }?>
+       </div>
 
  <button  type="submit">ОБНОВИТЬ</button>
    </div>

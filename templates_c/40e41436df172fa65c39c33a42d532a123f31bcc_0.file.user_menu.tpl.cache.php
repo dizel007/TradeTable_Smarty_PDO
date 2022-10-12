@@ -5,7 +5,7 @@
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.1.0',
-  'unifunc' => 'content_6346beb1b8aa51_22046503',
+  'unifunc' => 'content_6346beb1b7b044_73505886',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -16,12 +16,17 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
       2 => 'file',
     ),
   ),
-  'cache_lifetime' => 120,
-),true)) {
-function content_6346beb1b8aa51_22046503 (Smarty_Internal_Template $_smarty_tpl) {
-?><div class = "user_menu">
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_6346beb1b7b044_73505886 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->compiled->nocache_hash = '2794479336346beb1b5bc48_84736853';
+?>
+<div class = "user_menu">
   <div class = "menu_button">
-   <a href="make_new_kp.php?user=zeld"> Создать КП </a>
+   <a href="make_new_kp.php?user=<?php echo $_smarty_tpl->tpl_vars['user']->value;?>
+"> Создать КП </a>
   </div>
 
    <div class = "menu_button">
@@ -29,7 +34,8 @@ function content_6346beb1b8aa51_22046503 (Smarty_Internal_Template $_smarty_tpl)
   </div>
 
   <div class = "menu_button">
-    Пользователь: zeld
+    Пользователь: <?php echo $_smarty_tpl->tpl_vars['user']->value;?>
+
   </div>
 
  

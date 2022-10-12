@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.1.0, created on 2022-10-04 14:56:17
+/* Smarty version 4.1.0, created on 2022-10-12 13:22:24
   from 'C:\xampp\htdocs\TradeTable_Smarty_PDO\templates\company_by_id_kp.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.1.0',
-  'unifunc' => 'content_633c2d71b41879_61504147',
+  'unifunc' => 'content_6346a3705d5623_69617634',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,8 +20,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_633c2d71b41879_61504147 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->compiled->nocache_hash = '1393061409633c2d71b262f7_84696515';
+function content_6346a3705d5623_69617634 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->compiled->nocache_hash = '3542849706346a3705a6814_32008980';
 ?>
 <div class="zagolovok">
         <?php echo $_smarty_tpl->tpl_vars['company_arr']->value[0]['name'];?>

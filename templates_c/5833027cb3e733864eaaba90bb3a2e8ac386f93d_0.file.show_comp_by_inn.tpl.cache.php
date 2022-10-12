@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.1.0, created on 2022-10-04 14:56:17
+/* Smarty version 4.1.0, created on 2022-10-12 13:22:24
   from 'C:\xampp\htdocs\TradeTable_Smarty_PDO\templates\show_comp_by_inn.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.1.0',
-  'unifunc' => 'content_633c2d71ad4262_13609073',
+  'unifunc' => 'content_6346a370577a07_56225828',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -24,8 +24,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_633c2d71ad4262_13609073 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->compiled->nocache_hash = '1784101947633c2d71ad03e4_97326408';
+function content_6346a370577a07_56225828 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->compiled->nocache_hash = '17079712566346a37056fd06_96484438';
 ?>
 
 

@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.1.0, created on 2022-10-04 14:50:02
+/* Smarty version 4.1.0, created on 2022-10-12 16:18:41
   from 'C:\xampp\htdocs\TradeTable_Smarty_PDO\templates\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.1.0',
-  'unifunc' => 'content_633c1dea96b5c8_43593828',
+  'unifunc' => 'content_6346beb1d308b8_13690326',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -42,7 +42,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     '41c6dc6a18a8b58a180957fb4cea6d1a8efbd372' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TradeTable_Smarty_PDO\\templates\\main_table.tpl',
-      1 => 1664866249,
+      1 => 1665576145,
       2 => 'file',
     ),
     'ac1e3d6eaa128d645a47a9ac61bceeccb71ee66c' => 
@@ -60,7 +60,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   ),
   'cache_lifetime' => 120,
 ),true)) {
-function content_633c1dea96b5c8_43593828 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6346beb1d308b8_13690326 (Smarty_Internal_Template $_smarty_tpl) {
 ?><html lang="ru">
 
 <head>
@@ -209,12 +209,15 @@ function content_633c1dea96b5c8_43593828 (Smarty_Internal_Template $_smarty_tpl)
             <tr class="DrawDark">
                <td class="hidden_class_column">пп</td>
                <td>№КП</td>
+               <td>sEx</td>
                <td>Ex</td> 
+                              <td>NEx</td> 
                <td>Сч</td> 
-               <td width ="56" >Дата КП</td>
-               <td class="hidden_class_column">ИНН</td>
+               <td width ="60" >Дата КП</td>
+               <td width ="70" class="hidden_class_column">ИНН</td>
                <td>PDF</td>
                <td>Наименование</td>
+               <td>Кон</td>
                <td>EM</td>
                <td class="hidden_class_column">Важность</td>
           
@@ -222,14 +225,12 @@ function content_633c1dea96b5c8_43593828 (Smarty_Internal_Template $_smarty_tpl)
                <td>id</td>
                <td>Комментарий</td>
                <td>Ред</td>
-               <td width ="56" class="hidden_class_column">Сл.звонок</td>
+               <td width ="60" class="hidden_class_column">Сл.звонок</td>
                <td class="hidden_class_column">Состояние</td>
                <td>Сумма КП</td>
                <td class="hidden_class_column">НМЦК Закупки</td>
-               <td class="hidden_class_column">ДКЗ</td>
-               <td class="hidden_class_column">КЗ</td>
-               <td width ="56" class="hidden_class_column">Финиш</td>
-               <td>Ист</td>
+                      <td class="hidden_class_column">КЗ</td>       
+                        <td>Ист</td>
                <td class="hidden_class_column">Адрес поставки</td>
          </tr>
          </thead>
@@ -242,11 +243,21 @@ function content_633c1dea96b5c8_43593828 (Smarty_Internal_Template $_smarty_tpl)
 
                   <td><a href="open_excel/simplexlsx.php?LinkKp=EXCEL/№88 от 04.10.2022 ООО ГОРЗЕЛЕНСТРОЙ от ООО ТД АНМКАС.xlsx" class=\"btn\" target=\"_blank\">88</a></td>
                  
+<!-- ***************************  парсер EXCEL файл  ********************************************** -->   
+
+                      <td><a href="open_excel/simplexlsx.php?LinkKp=EXCEL/№88 от 04.10.2022 ООО ГОРЗЕЛЕНСТРОЙ от ООО ТД АНМКАС.xlsx"><img class="scale11" style = "opacity: 0.8" src="icons/see_excel.png" alt="Excel"></a></td>
+          
+<! -- Проверяем есть ли файл с КП в формате ексель на сервере ************************************** -->
 
 <!-- ***************************  EXCEL файл  ********************************************** -->   
 
                       <td><a href="EXCEL/№88 от 04.10.2022 ООО ГОРЗЕЛЕНСТРОЙ от ООО ТД АНМКАС.xlsx"><img class="scale11" style = "opacity: 0.8" src="icons/table/excel.png" alt="Excel"></a></td>
           
+<!-- *************************** NEW EXCEL файл  ********************************************** -->   
+
+                      <td><a href="open_excel/parce_excel_kp.php?LinkKp=EXCEL/№88 от 04.10.2022 ООО ГОРЗЕЛЕНСТРОЙ от ООО ТД АНМКАС.xlsx"><img class="scale11" style = "opacity: 0.8" src="icons/see_excel.png" alt="Excel"></a></td>
+          
+
 <! -- Проверяем есть ли файл с КП в формате ексель на сервере ************************************** -->
 <! -- Скачиваем счет -->
     
@@ -257,7 +268,7 @@ function content_633c1dea96b5c8_43593828 (Smarty_Internal_Template $_smarty_tpl)
          <td>2022-10-04</td>
                                       <!--   --> 
 <!-- ***************************  ИНН покупателя  ********************************************* -->        
-       <td width ="70" class=" hidden_class_column">
+       <td class="sell_comp hidden_class_column">
                         <a href="show_comp_by_inn.php?inn=5018186852" target="_blank">
                   5018186852
             </a>
@@ -272,19 +283,23 @@ function content_633c1dea96b5c8_43593828 (Smarty_Internal_Template $_smarty_tpl)
 
 <!-- ***************************  Наименование покупателя  ***************************************** -->
                           <td width ="150">ООО «ГОРЗЕЛЕНСТРОЙ»</td>
+             <!-- ******************************  Icons konturLink   ***************************************************** -->
+
+                          <td><img class="" style = "opacity: 0.2" src="icons/kontur.png" alt="SeeLinkKontur"></td>
              
+
 <!-- ******************************  Icons Email  *********************************************** -->
       <td><a href= "mailer/login_mail.php?id=3640&InnCustomer=5018186852" target="_blank"><img class="scale11" style = "opacity: 0.8" src="icons/table/email.png" alt="SeeKp"></a></td>
   <!-- ********************************** ВАЖНОСТЬ КП ************************************************ -->
       <td  class="hidden_class_column" id = "js-KpImportance3640" width ="50" class="hidden_class_column"></td>     
 
  <!-- ********************************** ОТветственный  ************************************************ -->
-     <td id= "js-Responsible3640" width="80" class="hidden_class_column">Зелизко</td>
+     <td id= "js-Responsible3640" width="80" class="hidden_class_column">Горячев</td>
 
  <!-- ******************************  ПАПКА для открытия КП  *************************************  -->
      <td><a name="3640" href="index.php?id=3640" target="_blank"><img class="scale11" src="icons/table/open_dir.png" style = "opacity: 0.6" alt="OPEN" title="Открыть КП id=3640"></a></td> 
 <!-- ********************************** Комментарий  ************************************************ -->
-      <td id = "js-comment3640" class ="limit_width text_left"></td>
+      <td id = "js-comment3640" class ="limit_width text_left">2022-10-12(zeld): 567567; </td>
 
 <!-- ********************************** Редактирование  ************************************************ -->
 <td><img id = "3640" data-modal = "write_comment" class="js-open-modal commentClass scale11" src="icons/table/change.png" alt="addCooment"></td> 
@@ -300,18 +315,11 @@ function content_633c1dea96b5c8_43593828 (Smarty_Internal_Template $_smarty_tpl)
       <td class="hidden_class_column">0</td>
 
 <!-- ********************************** Дата окончания выполнения контракта ********************** -->
-        <td class="hidden_class_column" id = "js-dateContract3640">
-        <img style = "opacity: 0.2" src="icons/table/dateContract.png" title="Нет данных">
-        </td>
-
-       
       
 
 <!-- ******************************  ФИНИШ Контракта   ********************************************* -->
     <td class="hidden_class_column" id = "js-FinishContract3640" >0</td>
 <!-- ******************************  ФИНИШ Контракта   ********************************************* -->
-      <td class="hidden_class_column" id = "js-dateFinishContract3640" width="60"></td>
-
 <!-- ******************************  ИСТОРИ КП  *************************************  -->
      <td><a name="3640" href="reports_show_history_kp.php?typeQuery=5&id_kp=3640" target="_blank"><img class="scale11" src="icons/table/history_kp.png" style = "opacity: 0.6" alt="История КП" title="История КП"></a></td> 
 <!-- ****************************** Адрес поставки   ********************************************* -->
@@ -326,11 +334,21 @@ function content_633c1dea96b5c8_43593828 (Smarty_Internal_Template $_smarty_tpl)
 
                   <td><a href="open_excel/simplexlsx.php?LinkKp=EXCEL/№84 от 04.10.2022 Пупок свисток от ООО ТД АНМКАС.xlsx" class=\"btn\" target=\"_blank\">84</a></td>
                  
+<!-- ***************************  парсер EXCEL файл  ********************************************** -->   
+
+                      <td><a href="open_excel/simplexlsx.php?LinkKp=EXCEL/№84 от 04.10.2022 Пупок свисток от ООО ТД АНМКАС.xlsx"><img class="scale11" style = "opacity: 0.8" src="icons/see_excel.png" alt="Excel"></a></td>
+          
+<! -- Проверяем есть ли файл с КП в формате ексель на сервере ************************************** -->
 
 <!-- ***************************  EXCEL файл  ********************************************** -->   
 
                       <td><a href="EXCEL/№84 от 04.10.2022 Пупок свисток от ООО ТД АНМКАС.xlsx"><img class="scale11" style = "opacity: 0.8" src="icons/table/excel.png" alt="Excel"></a></td>
           
+<!-- *************************** NEW EXCEL файл  ********************************************** -->   
+
+                      <td><a href="open_excel/parce_excel_kp.php?LinkKp=EXCEL/№84 от 04.10.2022 Пупок свисток от ООО ТД АНМКАС.xlsx"><img class="scale11" style = "opacity: 0.8" src="icons/see_excel.png" alt="Excel"></a></td>
+          
+
 <! -- Проверяем есть ли файл с КП в формате ексель на сервере ************************************** -->
 <! -- Скачиваем счет -->
     
@@ -341,7 +359,7 @@ function content_633c1dea96b5c8_43593828 (Smarty_Internal_Template $_smarty_tpl)
          <td>2022-10-04</td>
                                       <!--   --> 
 <!-- ***************************  ИНН покупателя  ********************************************* -->        
-       <td width ="70" class="sell_comp hidden_class_column">
+       <td class="sell_comp hidden_class_column">
                               &nbsp
             
        </td>
@@ -354,7 +372,11 @@ function content_633c1dea96b5c8_43593828 (Smarty_Internal_Template $_smarty_tpl)
 
 <!-- ***************************  Наименование покупателя  ***************************************** -->
                           <td width ="150">Пупок свисток</td>
+             <!-- ******************************  Icons konturLink   ***************************************************** -->
+
+                          <td><img class="" style = "opacity: 0.2" src="icons/kontur.png" alt="SeeLinkKontur"></td>
              
+
 <!-- ******************************  Icons Email  *********************************************** -->
       <td><a href= "mailer/login_mail.php?id=3636&InnCustomer=0" target="_blank"><img class="scale11" style = "opacity: 0.8" src="icons/table/email.png" alt="SeeKp"></a></td>
   <!-- ********************************** ВАЖНОСТЬ КП ************************************************ -->
@@ -382,18 +404,11 @@ function content_633c1dea96b5c8_43593828 (Smarty_Internal_Template $_smarty_tpl)
       <td class="hidden_class_column">0</td>
 
 <!-- ********************************** Дата окончания выполнения контракта ********************** -->
-        <td class="hidden_class_column" id = "js-dateContract3636">
-        <img style = "opacity: 0.2" src="icons/table/dateContract.png" title="Нет данных">
-        </td>
-
-       
       
 
 <!-- ******************************  ФИНИШ Контракта   ********************************************* -->
     <td class="hidden_class_column" id = "js-FinishContract3636" >0</td>
 <!-- ******************************  ФИНИШ Контракта   ********************************************* -->
-      <td class="hidden_class_column" id = "js-dateFinishContract3636" width="60">2022-10-05</td>
-
 <!-- ******************************  ИСТОРИ КП  *************************************  -->
      <td><a name="3636" href="reports_show_history_kp.php?typeQuery=5&id_kp=3636" target="_blank"><img class="scale11" src="icons/table/history_kp.png" style = "opacity: 0.6" alt="История КП" title="История КП"></a></td> 
 <!-- ****************************** Адрес поставки   ********************************************* -->
@@ -408,11 +423,21 @@ function content_633c1dea96b5c8_43593828 (Smarty_Internal_Template $_smarty_tpl)
 
                   <td><a href="open_excel/simplexlsx.php?LinkKp=EXCEL/№83 от 04.10.2022 Пупок свисток от ООО ТД АНМКАС.xlsx" class=\"btn\" target=\"_blank\">83</a></td>
                  
+<!-- ***************************  парсер EXCEL файл  ********************************************** -->   
+
+                      <td><a href="open_excel/simplexlsx.php?LinkKp=EXCEL/№83 от 04.10.2022 Пупок свисток от ООО ТД АНМКАС.xlsx"><img class="scale11" style = "opacity: 0.8" src="icons/see_excel.png" alt="Excel"></a></td>
+          
+<! -- Проверяем есть ли файл с КП в формате ексель на сервере ************************************** -->
 
 <!-- ***************************  EXCEL файл  ********************************************** -->   
 
                       <td><a href="EXCEL/№83 от 04.10.2022 Пупок свисток от ООО ТД АНМКАС.xlsx"><img class="scale11" style = "opacity: 0.8" src="icons/table/excel.png" alt="Excel"></a></td>
           
+<!-- *************************** NEW EXCEL файл  ********************************************** -->   
+
+                      <td><a href="open_excel/parce_excel_kp.php?LinkKp=EXCEL/№83 от 04.10.2022 Пупок свисток от ООО ТД АНМКАС.xlsx"><img class="scale11" style = "opacity: 0.8" src="icons/see_excel.png" alt="Excel"></a></td>
+          
+
 <! -- Проверяем есть ли файл с КП в формате ексель на сервере ************************************** -->
 <! -- Скачиваем счет -->
     
@@ -423,7 +448,7 @@ function content_633c1dea96b5c8_43593828 (Smarty_Internal_Template $_smarty_tpl)
          <td>2022-10-04</td>
                                       <!--   --> 
 <!-- ***************************  ИНН покупателя  ********************************************* -->        
-       <td width ="70" class="sell_comp hidden_class_column">
+       <td class="sell_comp hidden_class_column">
                               &nbsp
             
        </td>
@@ -436,14 +461,18 @@ function content_633c1dea96b5c8_43593828 (Smarty_Internal_Template $_smarty_tpl)
 
 <!-- ***************************  Наименование покупателя  ***************************************** -->
                           <td width ="150">Пупок свисток</td>
+             <!-- ******************************  Icons konturLink   ***************************************************** -->
+
+                          <td><img class="" style = "opacity: 0.2" src="icons/kontur.png" alt="SeeLinkKontur"></td>
              
+
 <!-- ******************************  Icons Email  *********************************************** -->
       <td><a href= "mailer/login_mail.php?id=3635&InnCustomer=0" target="_blank"><img class="scale11" style = "opacity: 0.8" src="icons/table/email.png" alt="SeeKp"></a></td>
   <!-- ********************************** ВАЖНОСТЬ КП ************************************************ -->
       <td  class="hidden_class_column" id = "js-KpImportance3635" width ="50" class="hidden_class_column"></td>     
 
  <!-- ********************************** ОТветственный  ************************************************ -->
-     <td id= "js-Responsible3635" width="80" class="hidden_class_column">Зелизко</td>
+     <td id= "js-Responsible3635" width="80" class="hidden_class_column">Гуц</td>
 
  <!-- ******************************  ПАПКА для открытия КП  *************************************  -->
      <td><a name="3635" href="index.php?id=3635" target="_blank"><img class="scale11" src="icons/table/open_dir.png" style = "opacity: 0.6" alt="OPEN" title="Открыть КП id=3635"></a></td> 
@@ -464,18 +493,11 @@ function content_633c1dea96b5c8_43593828 (Smarty_Internal_Template $_smarty_tpl)
       <td class="hidden_class_column">0</td>
 
 <!-- ********************************** Дата окончания выполнения контракта ********************** -->
-        <td class="hidden_class_column" id = "js-dateContract3635">
-        <img style = "opacity: 0.2" src="icons/table/dateContract.png" title="Нет данных">
-        </td>
-
-       
       
 
 <!-- ******************************  ФИНИШ Контракта   ********************************************* -->
     <td class="hidden_class_column" id = "js-FinishContract3635" >0</td>
 <!-- ******************************  ФИНИШ Контракта   ********************************************* -->
-      <td class="hidden_class_column" id = "js-dateFinishContract3635" width="60"></td>
-
 <!-- ******************************  ИСТОРИ КП  *************************************  -->
      <td><a name="3635" href="reports_show_history_kp.php?typeQuery=5&id_kp=3635" target="_blank"><img class="scale11" src="icons/table/history_kp.png" style = "opacity: 0.6" alt="История КП" title="История КП"></a></td> 
 <!-- ****************************** Адрес поставки   ********************************************* -->
@@ -490,11 +512,21 @@ function content_633c1dea96b5c8_43593828 (Smarty_Internal_Template $_smarty_tpl)
 
                   <td><a href="open_excel/simplexlsx.php?LinkKp=EXCEL/№123123 от 26.09.2022 ООО ПКТ СТРОЙ от ООО ТД АНМКАС.xlsx" class=\"btn\" target=\"_blank\">123123</a></td>
                  
+<!-- ***************************  парсер EXCEL файл  ********************************************** -->   
+
+                      <td><a href="open_excel/simplexlsx.php?LinkKp=EXCEL/№123123 от 26.09.2022 ООО ПКТ СТРОЙ от ООО ТД АНМКАС.xlsx"><img class="scale11" style = "opacity: 0.8" src="icons/see_excel.png" alt="Excel"></a></td>
+          
+<! -- Проверяем есть ли файл с КП в формате ексель на сервере ************************************** -->
 
 <!-- ***************************  EXCEL файл  ********************************************** -->   
 
                       <td><a href="EXCEL/№123123 от 26.09.2022 ООО ПКТ СТРОЙ от ООО ТД АНМКАС.xlsx"><img class="scale11" style = "opacity: 0.8" src="icons/table/excel.png" alt="Excel"></a></td>
           
+<!-- *************************** NEW EXCEL файл  ********************************************** -->   
+
+                      <td><a href="open_excel/parce_excel_kp.php?LinkKp=EXCEL/№123123 от 26.09.2022 ООО ПКТ СТРОЙ от ООО ТД АНМКАС.xlsx"><img class="scale11" style = "opacity: 0.8" src="icons/see_excel.png" alt="Excel"></a></td>
+          
+
 <! -- Проверяем есть ли файл с КП в формате ексель на сервере ************************************** -->
 <! -- Скачиваем счет -->
     
@@ -505,7 +537,7 @@ function content_633c1dea96b5c8_43593828 (Smarty_Internal_Template $_smarty_tpl)
          <td>2022-09-26</td>
                                       <!--   --> 
 <!-- ***************************  ИНН покупателя  ********************************************* -->        
-       <td width ="70" class=" hidden_class_column">
+       <td class=" hidden_class_column">
                         <a href="show_comp_by_inn.php?inn=3525395322" target="_blank">
                   3525395322
             </a>
@@ -520,7 +552,11 @@ function content_633c1dea96b5c8_43593828 (Smarty_Internal_Template $_smarty_tpl)
 
 <!-- ***************************  Наименование покупателя  ***************************************** -->
                           <td width ="150">ООО «ПКТ СТРОЙ»</td>
+             <!-- ******************************  Icons konturLink   ***************************************************** -->
+
+                          <td><img class="" style = "opacity: 0.2" src="icons/kontur.png" alt="SeeLinkKontur"></td>
              
+
 <!-- ******************************  Icons Email  *********************************************** -->
       <td><a href= "mailer/login_mail.php?id=3634&InnCustomer=3525395322" target="_blank"><img class="scale11" style = "opacity: 0.8" src="icons/table/email.png" alt="SeeKp"></a></td>
   <!-- ********************************** ВАЖНОСТЬ КП ************************************************ -->
@@ -548,18 +584,11 @@ function content_633c1dea96b5c8_43593828 (Smarty_Internal_Template $_smarty_tpl)
       <td class="hidden_class_column">0</td>
 
 <!-- ********************************** Дата окончания выполнения контракта ********************** -->
-        <td class="hidden_class_column" id = "js-dateContract3634">
-        <img style = "opacity: 0.2" src="icons/table/dateContract.png" title="Нет данных">
-        </td>
-
-       
       
 
 <!-- ******************************  ФИНИШ Контракта   ********************************************* -->
     <td class="hidden_class_column" id = "js-FinishContract3634" >0</td>
 <!-- ******************************  ФИНИШ Контракта   ********************************************* -->
-      <td class="hidden_class_column" id = "js-dateFinishContract3634" width="60"></td>
-
 <!-- ******************************  ИСТОРИ КП  *************************************  -->
      <td><a name="3634" href="reports_show_history_kp.php?typeQuery=5&id_kp=3634" target="_blank"><img class="scale11" src="icons/table/history_kp.png" style = "opacity: 0.6" alt="История КП" title="История КП"></a></td> 
 <!-- ****************************** Адрес поставки   ********************************************* -->
@@ -574,11 +603,21 @@ function content_633c1dea96b5c8_43593828 (Smarty_Internal_Template $_smarty_tpl)
 
                   <td><a href="open_excel/simplexlsx.php?LinkKp=EXCEL/№82 от 23.09.2022 Пучин Михаил Михайлович от ООО ТД АНМКАС.xlsx" class=\"btn\" target=\"_blank\">82</a></td>
                  
+<!-- ***************************  парсер EXCEL файл  ********************************************** -->   
+
+                      <td><a href="open_excel/simplexlsx.php?LinkKp=EXCEL/№82 от 23.09.2022 Пучин Михаил Михайлович от ООО ТД АНМКАС.xlsx"><img class="scale11" style = "opacity: 0.8" src="icons/see_excel.png" alt="Excel"></a></td>
+          
+<! -- Проверяем есть ли файл с КП в формате ексель на сервере ************************************** -->
 
 <!-- ***************************  EXCEL файл  ********************************************** -->   
 
                       <td><a href="EXCEL/№82 от 23.09.2022 Пучин Михаил Михайлович от ООО ТД АНМКАС.xlsx"><img class="scale11" style = "opacity: 0.8" src="icons/table/excel.png" alt="Excel"></a></td>
           
+<!-- *************************** NEW EXCEL файл  ********************************************** -->   
+
+                      <td><a href="open_excel/parce_excel_kp.php?LinkKp=EXCEL/№82 от 23.09.2022 Пучин Михаил Михайлович от ООО ТД АНМКАС.xlsx"><img class="scale11" style = "opacity: 0.8" src="icons/see_excel.png" alt="Excel"></a></td>
+          
+
 <! -- Проверяем есть ли файл с КП в формате ексель на сервере ************************************** -->
 <! -- Скачиваем счет -->
     
@@ -589,7 +628,7 @@ function content_633c1dea96b5c8_43593828 (Smarty_Internal_Template $_smarty_tpl)
          <td>2022-09-23</td>
                                       <!--   --> 
 <!-- ***************************  ИНН покупателя  ********************************************* -->        
-       <td width ="70" class=" hidden_class_column">
+       <td class=" hidden_class_column">
                         <a href="show_comp_by_inn.php?inn=862002062408" target="_blank">
                   862002062408
             </a>
@@ -604,7 +643,11 @@ function content_633c1dea96b5c8_43593828 (Smarty_Internal_Template $_smarty_tpl)
 
 <!-- ***************************  Наименование покупателя  ***************************************** -->
                           <td width ="150">Пучин Михаил Михайлович</td>
+             <!-- ******************************  Icons konturLink   ***************************************************** -->
+
+                          <td><img class="" style = "opacity: 0.2" src="icons/kontur.png" alt="SeeLinkKontur"></td>
              
+
 <!-- ******************************  Icons Email  *********************************************** -->
       <td><a href= "mailer/login_mail.php?id=3633&InnCustomer=862002062408" target="_blank"><img class="scale11" style = "opacity: 0.8" src="icons/table/email.png" alt="SeeKp"></a></td>
   <!-- ********************************** ВАЖНОСТЬ КП ************************************************ -->
@@ -632,18 +675,11 @@ function content_633c1dea96b5c8_43593828 (Smarty_Internal_Template $_smarty_tpl)
       <td class="hidden_class_column">0</td>
 
 <!-- ********************************** Дата окончания выполнения контракта ********************** -->
-        <td class="hidden_class_column" id = "js-dateContract3633">
-        <img style = "opacity: 0.2" src="icons/table/dateContract.png" title="Нет данных">
-        </td>
-
-       
       
 
 <!-- ******************************  ФИНИШ Контракта   ********************************************* -->
     <td class="hidden_class_column" id = "js-FinishContract3633" >0</td>
 <!-- ******************************  ФИНИШ Контракта   ********************************************* -->
-      <td class="hidden_class_column" id = "js-dateFinishContract3633" width="60"></td>
-
 <!-- ******************************  ИСТОРИ КП  *************************************  -->
      <td><a name="3633" href="reports_show_history_kp.php?typeQuery=5&id_kp=3633" target="_blank"><img class="scale11" src="icons/table/history_kp.png" style = "opacity: 0.6" alt="История КП" title="История КП"></a></td> 
 <!-- ****************************** Адрес поставки   ********************************************* -->
@@ -659,12 +695,24 @@ function content_633c1dea96b5c8_43593828 (Smarty_Internal_Template $_smarty_tpl)
           
        <td>77</td> 
          
+<!-- ***************************  парсер EXCEL файл  ********************************************** -->   
+
+          
+       <td><img style = "opacity: 0.2" src="icons/see_excel.png" alt="Excel"></td>
+         
+<! -- Проверяем есть ли файл с КП в формате ексель на сервере ************************************** -->
 
 <!-- ***************************  EXCEL файл  ********************************************** -->   
 
           
        <td><img style = "opacity: 0.2" src="icons/table/excel.png" alt="Excel"></td>
          
+<!-- *************************** NEW EXCEL файл  ********************************************** -->   
+
+          
+       <td><img style = "opacity: 0.2" src="icons/see_excel.png" alt="Excel"></td>
+         
+
 <! -- Проверяем есть ли файл с КП в формате ексель на сервере ************************************** -->
 <! -- Скачиваем счет -->
       <td><img style = "opacity: 0.2" src="icons/table/schet.png" alt="Excel"></td>
@@ -674,7 +722,7 @@ function content_633c1dea96b5c8_43593828 (Smarty_Internal_Template $_smarty_tpl)
          <td>2022-09-23</td>
                                       <!--   --> 
 <!-- ***************************  ИНН покупателя  ********************************************* -->        
-       <td width ="70" class=" hidden_class_column">
+       <td class=" hidden_class_column">
                         <a href="show_comp_by_inn.php?inn=3525395322" target="_blank">
                   3525395322
             </a>
@@ -689,19 +737,23 @@ function content_633c1dea96b5c8_43593828 (Smarty_Internal_Template $_smarty_tpl)
 
 <!-- ***************************  Наименование покупателя  ***************************************** -->
                           <td width ="150">ООО «ПКТ СТРОЙ»</td>
+             <!-- ******************************  Icons konturLink   ***************************************************** -->
+
+                          <td><img class="" style = "opacity: 0.2" src="icons/kontur.png" alt="SeeLinkKontur"></td>
              
+
 <!-- ******************************  Icons Email  *********************************************** -->
       <td><a href= "mailer/login_mail.php?id=3628&InnCustomer=3525395322" target="_blank"><img class="scale11" style = "opacity: 0.8" src="icons/table/email.png" alt="SeeKp"></a></td>
   <!-- ********************************** ВАЖНОСТЬ КП ************************************************ -->
       <td  class="hidden_class_column" id = "js-KpImportance3628" width ="50" class="hidden_class_column"></td>     
 
  <!-- ********************************** ОТветственный  ************************************************ -->
-     <td id= "js-Responsible3628" width="80" class="hidden_class_column">Зелизко</td>
+     <td id= "js-Responsible3628" width="80" class="hidden_class_column"></td>
 
  <!-- ******************************  ПАПКА для открытия КП  *************************************  -->
      <td><a name="3628" href="index.php?id=3628" target="_blank"><img class="scale11" src="icons/table/open_dir.png" style = "opacity: 0.6" alt="OPEN" title="Открыть КП id=3628"></a></td> 
 <!-- ********************************** Комментарий  ************************************************ -->
-      <td id = "js-comment3628" class ="limit_width text_left">2022-09-28(zeld): Созвонился с Андреем; </td>
+      <td id = "js-comment3628" class ="limit_width text_left">2022-10-12(zeld): проаро; <br><hr>2022-09-28(zeld): Созвонился с Андреем; </td>
 
 <!-- ********************************** Редактирование  ************************************************ -->
 <td><img id = "3628" data-modal = "write_comment" class="js-open-modal commentClass scale11" src="icons/table/change.png" alt="addCooment"></td> 
@@ -717,18 +769,11 @@ function content_633c1dea96b5c8_43593828 (Smarty_Internal_Template $_smarty_tpl)
       <td class="hidden_class_column">0</td>
 
 <!-- ********************************** Дата окончания выполнения контракта ********************** -->
-        <td class="hidden_class_column" id = "js-dateContract3628">
-        <img style = "opacity: 0.2" src="icons/table/dateContract.png" title="Нет данных">
-        </td>
-
-       
       
 
 <!-- ******************************  ФИНИШ Контракта   ********************************************* -->
     <td class="hidden_class_column" id = "js-FinishContract3628" >0</td>
 <!-- ******************************  ФИНИШ Контракта   ********************************************* -->
-      <td class="hidden_class_column" id = "js-dateFinishContract3628" width="60"></td>
-
 <!-- ******************************  ИСТОРИ КП  *************************************  -->
      <td><a name="3628" href="reports_show_history_kp.php?typeQuery=5&id_kp=3628" target="_blank"><img class="scale11" src="icons/table/history_kp.png" style = "opacity: 0.6" alt="История КП" title="История КП"></a></td> 
 <!-- ****************************** Адрес поставки   ********************************************* -->
@@ -744,12 +789,24 @@ function content_633c1dea96b5c8_43593828 (Smarty_Internal_Template $_smarty_tpl)
           
        <td>5676</td> 
          
+<!-- ***************************  парсер EXCEL файл  ********************************************** -->   
+
+          
+       <td><img style = "opacity: 0.2" src="icons/see_excel.png" alt="Excel"></td>
+         
+<! -- Проверяем есть ли файл с КП в формате ексель на сервере ************************************** -->
 
 <!-- ***************************  EXCEL файл  ********************************************** -->   
 
           
        <td><img style = "opacity: 0.2" src="icons/table/excel.png" alt="Excel"></td>
          
+<!-- *************************** NEW EXCEL файл  ********************************************** -->   
+
+          
+       <td><img style = "opacity: 0.2" src="icons/see_excel.png" alt="Excel"></td>
+         
+
 <! -- Проверяем есть ли файл с КП в формате ексель на сервере ************************************** -->
 <! -- Скачиваем счет -->
       <td><img style = "opacity: 0.2" src="icons/table/schet.png" alt="Excel"></td>
@@ -759,7 +816,7 @@ function content_633c1dea96b5c8_43593828 (Smarty_Internal_Template $_smarty_tpl)
          <td>2022-09-20</td>
                                       <!--   --> 
 <!-- ***************************  ИНН покупателя  ********************************************* -->        
-       <td width ="70" class="sell_comp hidden_class_column">
+       <td class="sell_comp hidden_class_column">
                         <a href="show_comp_by_inn.php?inn=5018186852" target="_blank">
                   5018186852
             </a>
@@ -774,7 +831,11 @@ function content_633c1dea96b5c8_43593828 (Smarty_Internal_Template $_smarty_tpl)
 
 <!-- ***************************  Наименование покупателя  ***************************************** -->
                           <td width ="150">ООО «ГОРЗЕЛЕНСТРОЙ»</td>
+             <!-- ******************************  Icons konturLink   ***************************************************** -->
+
+                          <td><img class="" style = "opacity: 0.2" src="icons/kontur.png" alt="SeeLinkKontur"></td>
              
+
 <!-- ******************************  Icons Email  *********************************************** -->
       <td><a href= "mailer/login_mail.php?id=3626&InnCustomer=5018186852" target="_blank"><img class="scale11" style = "opacity: 0.8" src="icons/table/email.png" alt="SeeKp"></a></td>
   <!-- ********************************** ВАЖНОСТЬ КП ************************************************ -->
@@ -802,18 +863,11 @@ function content_633c1dea96b5c8_43593828 (Smarty_Internal_Template $_smarty_tpl)
       <td class="hidden_class_column">0</td>
 
 <!-- ********************************** Дата окончания выполнения контракта ********************** -->
-        <td class="hidden_class_column" id = "js-dateContract3626">
-        <img style = "opacity: 0.2" src="icons/table/dateContract.png" title="Нет данных">
-        </td>
-
-       
       
 
 <!-- ******************************  ФИНИШ Контракта   ********************************************* -->
     <td class="hidden_class_column" id = "js-FinishContract3626" >0</td>
 <!-- ******************************  ФИНИШ Контракта   ********************************************* -->
-      <td class="hidden_class_column" id = "js-dateFinishContract3626" width="60"></td>
-
 <!-- ******************************  ИСТОРИ КП  *************************************  -->
      <td><a name="3626" href="reports_show_history_kp.php?typeQuery=5&id_kp=3626" target="_blank"><img class="scale11" src="icons/table/history_kp.png" style = "opacity: 0.6" alt="История КП" title="История КП"></a></td> 
 <!-- ****************************** Адрес поставки   ********************************************* -->
@@ -829,12 +883,24 @@ function content_633c1dea96b5c8_43593828 (Smarty_Internal_Template $_smarty_tpl)
           
        <td>1111111</td> 
          
+<!-- ***************************  парсер EXCEL файл  ********************************************** -->   
+
+          
+       <td><img style = "opacity: 0.2" src="icons/see_excel.png" alt="Excel"></td>
+         
+<! -- Проверяем есть ли файл с КП в формате ексель на сервере ************************************** -->
 
 <!-- ***************************  EXCEL файл  ********************************************** -->   
 
           
        <td><img style = "opacity: 0.2" src="icons/table/excel.png" alt="Excel"></td>
          
+<!-- *************************** NEW EXCEL файл  ********************************************** -->   
+
+          
+       <td><img style = "opacity: 0.2" src="icons/see_excel.png" alt="Excel"></td>
+         
+
 <! -- Проверяем есть ли файл с КП в формате ексель на сервере ************************************** -->
 <! -- Скачиваем счет -->
       <td><img style = "opacity: 0.2" src="icons/table/schet.png" alt="Excel"></td>
@@ -844,7 +910,7 @@ function content_633c1dea96b5c8_43593828 (Smarty_Internal_Template $_smarty_tpl)
          <td>2022-09-16</td>
                                       <!--   --> 
 <!-- ***************************  ИНН покупателя  ********************************************* -->        
-       <td width ="70" class=" hidden_class_column">
+       <td class=" hidden_class_column">
                         <a href="show_comp_by_inn.php?inn=7810489590" target="_blank">
                   7810489590
             </a>
@@ -859,7 +925,11 @@ function content_633c1dea96b5c8_43593828 (Smarty_Internal_Template $_smarty_tpl)
 
 <!-- ***************************  Наименование покупателя  ***************************************** -->
                           <td width ="150">ООО «ПитерСпортСтрой»</td>
+             <!-- ******************************  Icons konturLink   ***************************************************** -->
+
+                          <td><img class="" style = "opacity: 0.2" src="icons/kontur.png" alt="SeeLinkKontur"></td>
              
+
 <!-- ******************************  Icons Email  *********************************************** -->
       <td><a href= "mailer/login_mail.php?id=3606&InnCustomer=7810489590" target="_blank"><img class="scale11" style = "opacity: 0.8" src="icons/table/email.png" alt="SeeKp"></a></td>
   <!-- ********************************** ВАЖНОСТЬ КП ************************************************ -->
@@ -871,7 +941,7 @@ function content_633c1dea96b5c8_43593828 (Smarty_Internal_Template $_smarty_tpl)
  <!-- ******************************  ПАПКА для открытия КП  *************************************  -->
      <td><a name="3606" href="index.php?id=3606" target="_blank"><img class="scale11" src="icons/table/open_dir.png" style = "opacity: 0.6" alt="OPEN" title="Открыть КП id=3606"></a></td> 
 <!-- ********************************** Комментарий  ************************************************ -->
-      <td id = "js-comment3606" class ="limit_width text_left">2022-09-28(zeld): Созвонился с Андреем; Созвонился с Андреем; Созвонился с Андреем; df jdg kdfh g s;ldg lkxjf hlkdjhgkhdfgl. lsugh lkdng sl gh ;al udh lgskdg lsdgll uhlgsdfghh; df jdg kd; Созвонился с Андреем; Созвонился с Андреем; Созвонился с Андреем; df jdg   kdfh g s;ldg lkxjf hlkdjhgkhdfgl.  lsugh lkdng sl gh ;al udh lgskdg lsdgll uhlgsdfghh; df jdg   kdfh g s;ldg lkxjf hlkdjhgkhdfgl.  lsugh lkdng sl gh ;al udh lgskdg lsdgll uhlgsdfghh; <br><hr>2022-09-22(zeld): цйу; <br><hr>2022-09-15(zeld): ssss; </td>
+      <td id = "js-comment3606" class ="limit_width text_left">2022-10-12(zeld): Просто и ьыстор; <br><hr>2022-09-28(zeld): Созвонился с Андреем; Созвонился с Андреем; Созвонился с Андреем; df jdg kdfh g s;ldg lkxjf hlkdjhgkhdfgl. lsugh lkdng sl gh ;al udh lgskdg lsdgll uhlgsdfghh; df jdg kd; Созвонился с Андреем; Созвонился с Андреем; Созвонился с Андреем; df jdg   kdfh g s;ldg lkxjf hlkdjhgkhdfgl.  lsugh lkdng sl gh ;al udh lgskdg lsdgll uhlgsdfghh; df jdg   kdfh g s;ldg lkxjf hlkdjhgkhdfgl.  lsugh lkdng sl gh ;al udh lgskdg lsdgll uhlgsdfghh; <br><hr>2022-09-22(zeld): цйу; <br><hr>2022-09-15(zeld): ssss; </td>
 
 <!-- ********************************** Редактирование  ************************************************ -->
 <td><img id = "3606" data-modal = "write_comment" class="js-open-modal commentClass scale11" src="icons/table/change.png" alt="addCooment"></td> 
@@ -888,15 +958,10 @@ function content_633c1dea96b5c8_43593828 (Smarty_Internal_Template $_smarty_tpl)
 
 <!-- ********************************** Дата окончания выполнения контракта ********************** -->
       
-     <td class="hidden_class_column" id = "js-dateContract3606"><img class="scale11" style = "opacity: 0.8" src="icons/table/dateContract.png" title="Дата Закл :2022-09-08"></td>
-         
-      
 
 <!-- ******************************  ФИНИШ Контракта   ********************************************* -->
     <td class="hidden_class_column" id = "js-FinishContract3606" >0</td>
 <!-- ******************************  ФИНИШ Контракта   ********************************************* -->
-      <td class="hidden_class_column" id = "js-dateFinishContract3606" width="60">2022-09-16</td>
-
 <!-- ******************************  ИСТОРИ КП  *************************************  -->
      <td><a name="3606" href="reports_show_history_kp.php?typeQuery=5&id_kp=3606" target="_blank"><img class="scale11" src="icons/table/history_kp.png" style = "opacity: 0.6" alt="История КП" title="История КП"></a></td> 
 <!-- ****************************** Адрес поставки   ********************************************* -->
@@ -912,12 +977,24 @@ function content_633c1dea96b5c8_43593828 (Smarty_Internal_Template $_smarty_tpl)
           
        <td>1111111</td> 
          
+<!-- ***************************  парсер EXCEL файл  ********************************************** -->   
+
+          
+       <td><img style = "opacity: 0.2" src="icons/see_excel.png" alt="Excel"></td>
+         
+<! -- Проверяем есть ли файл с КП в формате ексель на сервере ************************************** -->
 
 <!-- ***************************  EXCEL файл  ********************************************** -->   
 
           
        <td><img style = "opacity: 0.2" src="icons/table/excel.png" alt="Excel"></td>
          
+<!-- *************************** NEW EXCEL файл  ********************************************** -->   
+
+          
+       <td><img style = "opacity: 0.2" src="icons/see_excel.png" alt="Excel"></td>
+         
+
 <! -- Проверяем есть ли файл с КП в формате ексель на сервере ************************************** -->
 <! -- Скачиваем счет -->
       <td><img style = "opacity: 0.2" src="icons/table/schet.png" alt="Excel"></td>
@@ -927,7 +1004,7 @@ function content_633c1dea96b5c8_43593828 (Smarty_Internal_Template $_smarty_tpl)
          <td>2022-09-16</td>
                                       <!--   --> 
 <!-- ***************************  ИНН покупателя  ********************************************* -->        
-       <td width ="70" class=" hidden_class_column">
+       <td class=" hidden_class_column">
                         <a href="show_comp_by_inn.php?inn=7810489590" target="_blank">
                   7810489590
             </a>
@@ -942,7 +1019,11 @@ function content_633c1dea96b5c8_43593828 (Smarty_Internal_Template $_smarty_tpl)
 
 <!-- ***************************  Наименование покупателя  ***************************************** -->
                           <td width ="150">ООО «ПитерСпортСтрой»</td>
+             <!-- ******************************  Icons konturLink   ***************************************************** -->
+
+                          <td><img class="" style = "opacity: 0.2" src="icons/kontur.png" alt="SeeLinkKontur"></td>
              
+
 <!-- ******************************  Icons Email  *********************************************** -->
       <td><a href= "mailer/login_mail.php?id=3607&InnCustomer=7810489590" target="_blank"><img class="scale11" style = "opacity: 0.8" src="icons/table/email.png" alt="SeeKp"></a></td>
   <!-- ********************************** ВАЖНОСТЬ КП ************************************************ -->
@@ -970,18 +1051,11 @@ function content_633c1dea96b5c8_43593828 (Smarty_Internal_Template $_smarty_tpl)
       <td class="hidden_class_column">0</td>
 
 <!-- ********************************** Дата окончания выполнения контракта ********************** -->
-        <td class="hidden_class_column" id = "js-dateContract3607">
-        <img style = "opacity: 0.2" src="icons/table/dateContract.png" title="Нет данных">
-        </td>
-
-       
       
 
 <!-- ******************************  ФИНИШ Контракта   ********************************************* -->
     <td class="hidden_class_column" id = "js-FinishContract3607" >0</td>
 <!-- ******************************  ФИНИШ Контракта   ********************************************* -->
-      <td class="hidden_class_column" id = "js-dateFinishContract3607" width="60"></td>
-
 <!-- ******************************  ИСТОРИ КП  *************************************  -->
      <td><a name="3607" href="reports_show_history_kp.php?typeQuery=5&id_kp=3607" target="_blank"><img class="scale11" src="icons/table/history_kp.png" style = "opacity: 0.6" alt="История КП" title="История КП"></a></td> 
 <!-- ****************************** Адрес поставки   ********************************************* -->
@@ -997,12 +1071,24 @@ function content_633c1dea96b5c8_43593828 (Smarty_Internal_Template $_smarty_tpl)
           
        <td>73</td> 
          
+<!-- ***************************  парсер EXCEL файл  ********************************************** -->   
+
+          
+       <td><img style = "opacity: 0.2" src="icons/see_excel.png" alt="Excel"></td>
+         
+<! -- Проверяем есть ли файл с КП в формате ексель на сервере ************************************** -->
 
 <!-- ***************************  EXCEL файл  ********************************************** -->   
 
           
        <td><img style = "opacity: 0.2" src="icons/table/excel.png" alt="Excel"></td>
          
+<!-- *************************** NEW EXCEL файл  ********************************************** -->   
+
+          
+       <td><img style = "opacity: 0.2" src="icons/see_excel.png" alt="Excel"></td>
+         
+
 <! -- Проверяем есть ли файл с КП в формате ексель на сервере ************************************** -->
 <! -- Скачиваем счет -->
       <td><img style = "opacity: 0.2" src="icons/table/schet.png" alt="Excel"></td>
@@ -1012,7 +1098,7 @@ function content_633c1dea96b5c8_43593828 (Smarty_Internal_Template $_smarty_tpl)
          <td>2022-09-16</td>
                                       <!--   --> 
 <!-- ***************************  ИНН покупателя  ********************************************* -->        
-       <td width ="70" class="sell_comp hidden_class_column">
+       <td class="sell_comp hidden_class_column">
                         <a href="show_comp_by_inn.php?inn=5018186852" target="_blank">
                   5018186852
             </a>
@@ -1027,7 +1113,11 @@ function content_633c1dea96b5c8_43593828 (Smarty_Internal_Template $_smarty_tpl)
 
 <!-- ***************************  Наименование покупателя  ***************************************** -->
                           <td width ="150">ООО «ГОРЗЕЛЕНСТРОЙ»</td>
+             <!-- ******************************  Icons konturLink   ***************************************************** -->
+
+                          <td><img class="" style = "opacity: 0.2" src="icons/kontur.png" alt="SeeLinkKontur"></td>
              
+
 <!-- ******************************  Icons Email  *********************************************** -->
       <td><a href= "mailer/login_mail.php?id=3623&InnCustomer=5018186852" target="_blank"><img class="scale11" style = "opacity: 0.8" src="icons/table/email.png" alt="SeeKp"></a></td>
   <!-- ********************************** ВАЖНОСТЬ КП ************************************************ -->
@@ -1046,7 +1136,7 @@ function content_633c1dea96b5c8_43593828 (Smarty_Internal_Template $_smarty_tpl)
 
 <!-- ********************************** Дата следующего звонка  ********************************** -->
 
-      <td id = "js-DateNextCall3623" width="60" class ="alarmcolor  hidden_class_column"></td>
+      <td id = "js-DateNextCall3623" width="60" class ="alarmcolor  hidden_class_column">2022-09-26</td>
 <!-- ********************************** СОСТОЯНИЕ КП ********************************** -->
       <td class="hidden_class_column"> <div id = "js-KpCondition3623" class = ""></div></td>
 <!-- ********************************** СУММА КП ********************************** -->      
@@ -1055,22 +1145,15 @@ function content_633c1dea96b5c8_43593828 (Smarty_Internal_Template $_smarty_tpl)
       <td class="hidden_class_column">0</td>
 
 <!-- ********************************** Дата окончания выполнения контракта ********************** -->
-        <td class="hidden_class_column" id = "js-dateContract3623">
-        <img style = "opacity: 0.2" src="icons/table/dateContract.png" title="Нет данных">
-        </td>
-
-       
       
 
 <!-- ******************************  ФИНИШ Контракта   ********************************************* -->
     <td class="hidden_class_column" id = "js-FinishContract3623" >0</td>
 <!-- ******************************  ФИНИШ Контракта   ********************************************* -->
-      <td class="hidden_class_column" id = "js-dateFinishContract3623" width="60"></td>
-
 <!-- ******************************  ИСТОРИ КП  *************************************  -->
      <td><a name="3623" href="reports_show_history_kp.php?typeQuery=5&id_kp=3623" target="_blank"><img class="scale11" src="icons/table/history_kp.png" style = "opacity: 0.6" alt="История КП" title="История КП"></a></td> 
 <!-- ****************************** Адрес поставки   ********************************************* -->
-      <td class="hidden_class_column" id = "js-Adress3623" width ="150" class="hidden_class_column"></td>
+      <td class="hidden_class_column" id = "js-Adress3623" width ="150" class="hidden_class_column">werwer</td>
                
        </tr>
     
@@ -1082,12 +1165,24 @@ function content_633c1dea96b5c8_43593828 (Smarty_Internal_Template $_smarty_tpl)
           
        <td>65</td> 
          
+<!-- ***************************  парсер EXCEL файл  ********************************************** -->   
+
+          
+       <td><img style = "opacity: 0.2" src="icons/see_excel.png" alt="Excel"></td>
+         
+<! -- Проверяем есть ли файл с КП в формате ексель на сервере ************************************** -->
 
 <!-- ***************************  EXCEL файл  ********************************************** -->   
 
           
        <td><img style = "opacity: 0.2" src="icons/table/excel.png" alt="Excel"></td>
          
+<!-- *************************** NEW EXCEL файл  ********************************************** -->   
+
+          
+       <td><img style = "opacity: 0.2" src="icons/see_excel.png" alt="Excel"></td>
+         
+
 <! -- Проверяем есть ли файл с КП в формате ексель на сервере ************************************** -->
 <! -- Скачиваем счет -->
       <td><img style = "opacity: 0.2" src="icons/table/schet.png" alt="Excel"></td>
@@ -1097,7 +1192,7 @@ function content_633c1dea96b5c8_43593828 (Smarty_Internal_Template $_smarty_tpl)
          <td>2022-09-16</td>
                                       <!--   --> 
 <!-- ***************************  ИНН покупателя  ********************************************* -->        
-       <td width ="70" class=" hidden_class_column">
+       <td class=" hidden_class_column">
                         <a href="show_comp_by_inn.php?inn=862002062408" target="_blank">
                   862002062408
             </a>
@@ -1112,7 +1207,11 @@ function content_633c1dea96b5c8_43593828 (Smarty_Internal_Template $_smarty_tpl)
 
 <!-- ***************************  Наименование покупателя  ***************************************** -->
                           <td width ="150">Пучин Михаил Михайлович</td>
+             <!-- ******************************  Icons konturLink   ***************************************************** -->
+
+                          <td><img class="" style = "opacity: 0.2" src="icons/kontur.png" alt="SeeLinkKontur"></td>
              
+
 <!-- ******************************  Icons Email  *********************************************** -->
       <td><a href= "mailer/login_mail.php?id=3611&InnCustomer=862002062408" target="_blank"><img class="scale11" style = "opacity: 0.8" src="icons/table/email.png" alt="SeeKp"></a></td>
   <!-- ********************************** ВАЖНОСТЬ КП ************************************************ -->
@@ -1140,18 +1239,11 @@ function content_633c1dea96b5c8_43593828 (Smarty_Internal_Template $_smarty_tpl)
       <td class="hidden_class_column">0</td>
 
 <!-- ********************************** Дата окончания выполнения контракта ********************** -->
-        <td class="hidden_class_column" id = "js-dateContract3611">
-        <img style = "opacity: 0.2" src="icons/table/dateContract.png" title="Нет данных">
-        </td>
-
-       
       
 
 <!-- ******************************  ФИНИШ Контракта   ********************************************* -->
     <td class="hidden_class_column" id = "js-FinishContract3611" >0</td>
 <!-- ******************************  ФИНИШ Контракта   ********************************************* -->
-      <td class="hidden_class_column" id = "js-dateFinishContract3611" width="60"></td>
-
 <!-- ******************************  ИСТОРИ КП  *************************************  -->
      <td><a name="3611" href="reports_show_history_kp.php?typeQuery=5&id_kp=3611" target="_blank"><img class="scale11" src="icons/table/history_kp.png" style = "opacity: 0.6" alt="История КП" title="История КП"></a></td> 
 <!-- ****************************** Адрес поставки   ********************************************* -->
@@ -1167,12 +1259,24 @@ function content_633c1dea96b5c8_43593828 (Smarty_Internal_Template $_smarty_tpl)
           
        <td>63</td> 
          
+<!-- ***************************  парсер EXCEL файл  ********************************************** -->   
+
+          
+       <td><img style = "opacity: 0.2" src="icons/see_excel.png" alt="Excel"></td>
+         
+<! -- Проверяем есть ли файл с КП в формате ексель на сервере ************************************** -->
 
 <!-- ***************************  EXCEL файл  ********************************************** -->   
 
           
        <td><img style = "opacity: 0.2" src="icons/table/excel.png" alt="Excel"></td>
          
+<!-- *************************** NEW EXCEL файл  ********************************************** -->   
+
+          
+       <td><img style = "opacity: 0.2" src="icons/see_excel.png" alt="Excel"></td>
+         
+
 <! -- Проверяем есть ли файл с КП в формате ексель на сервере ************************************** -->
 <! -- Скачиваем счет -->
       <td><img style = "opacity: 0.2" src="icons/table/schet.png" alt="Excel"></td>
@@ -1182,7 +1286,7 @@ function content_633c1dea96b5c8_43593828 (Smarty_Internal_Template $_smarty_tpl)
          <td>2022-09-16</td>
                                       <!--   --> 
 <!-- ***************************  ИНН покупателя  ********************************************* -->        
-       <td width ="70" class=" hidden_class_column">
+       <td class=" hidden_class_column">
                         <a href="show_comp_by_inn.php?inn=3627008639" target="_blank">
                   3627008639
             </a>
@@ -1197,7 +1301,11 @@ function content_633c1dea96b5c8_43593828 (Smarty_Internal_Template $_smarty_tpl)
 
 <!-- ***************************  Наименование покупателя  ***************************************** -->
                           <td width ="150">АО «КОТТЕДЖ-ИНДУСТРИЯ»</td>
+             <!-- ******************************  Icons konturLink   ***************************************************** -->
+
+                          <td><img class="" style = "opacity: 0.2" src="icons/kontur.png" alt="SeeLinkKontur"></td>
              
+
 <!-- ******************************  Icons Email  *********************************************** -->
       <td><a href= "mailer/login_mail.php?id=3609&InnCustomer=3627008639" target="_blank"><img class="scale11" style = "opacity: 0.8" src="icons/table/email.png" alt="SeeKp"></a></td>
   <!-- ********************************** ВАЖНОСТЬ КП ************************************************ -->
@@ -1225,18 +1333,11 @@ function content_633c1dea96b5c8_43593828 (Smarty_Internal_Template $_smarty_tpl)
       <td class="hidden_class_column">0</td>
 
 <!-- ********************************** Дата окончания выполнения контракта ********************** -->
-        <td class="hidden_class_column" id = "js-dateContract3609">
-        <img style = "opacity: 0.2" src="icons/table/dateContract.png" title="Нет данных">
-        </td>
-
-       
       
 
 <!-- ******************************  ФИНИШ Контракта   ********************************************* -->
     <td class="hidden_class_column" id = "js-FinishContract3609" >0</td>
 <!-- ******************************  ФИНИШ Контракта   ********************************************* -->
-      <td class="hidden_class_column" id = "js-dateFinishContract3609" width="60"></td>
-
 <!-- ******************************  ИСТОРИ КП  *************************************  -->
      <td><a name="3609" href="reports_show_history_kp.php?typeQuery=5&id_kp=3609" target="_blank"><img class="scale11" src="icons/table/history_kp.png" style = "opacity: 0.6" alt="История КП" title="История КП"></a></td> 
 <!-- ****************************** Адрес поставки   ********************************************* -->
@@ -1252,12 +1353,24 @@ function content_633c1dea96b5c8_43593828 (Smarty_Internal_Template $_smarty_tpl)
           
        <td>87875</td> 
          
+<!-- ***************************  парсер EXCEL файл  ********************************************** -->   
+
+          
+       <td><img style = "opacity: 0.2" src="icons/see_excel.png" alt="Excel"></td>
+         
+<! -- Проверяем есть ли файл с КП в формате ексель на сервере ************************************** -->
 
 <!-- ***************************  EXCEL файл  ********************************************** -->   
 
           
        <td><img style = "opacity: 0.2" src="icons/table/excel.png" alt="Excel"></td>
          
+<!-- *************************** NEW EXCEL файл  ********************************************** -->   
+
+          
+       <td><img style = "opacity: 0.2" src="icons/see_excel.png" alt="Excel"></td>
+         
+
 <! -- Проверяем есть ли файл с КП в формате ексель на сервере ************************************** -->
 <! -- Скачиваем счет -->
       <td><img style = "opacity: 0.2" src="icons/table/schet.png" alt="Excel"></td>
@@ -1267,7 +1380,7 @@ function content_633c1dea96b5c8_43593828 (Smarty_Internal_Template $_smarty_tpl)
          <td>2022-09-15</td>
                                       <!--   --> 
 <!-- ***************************  ИНН покупателя  ********************************************* -->        
-       <td width ="70" class="sell_comp hidden_class_column">
+       <td class="sell_comp hidden_class_column">
                         <a href="show_comp_by_inn.php?inn=666666666666" target="_blank">
                   666666666666
             </a>
@@ -1282,7 +1395,11 @@ function content_633c1dea96b5c8_43593828 (Smarty_Internal_Template $_smarty_tpl)
 
 <!-- ***************************  Наименование покупателя  ***************************************** -->
                           <td width ="150">Горсвет зажчс авап</td>
+             <!-- ******************************  Icons konturLink   ***************************************************** -->
+
+                          <td><img class="" style = "opacity: 0.2" src="icons/kontur.png" alt="SeeLinkKontur"></td>
              
+
 <!-- ******************************  Icons Email  *********************************************** -->
       <td><a href= "mailer/login_mail.php?id=3596&InnCustomer=666666666666" target="_blank"><img class="scale11" style = "opacity: 0.8" src="icons/table/email.png" alt="SeeKp"></a></td>
   <!-- ********************************** ВАЖНОСТЬ КП ************************************************ -->
@@ -1310,18 +1427,11 @@ function content_633c1dea96b5c8_43593828 (Smarty_Internal_Template $_smarty_tpl)
       <td class="hidden_class_column">0</td>
 
 <!-- ********************************** Дата окончания выполнения контракта ********************** -->
-        <td class="hidden_class_column" id = "js-dateContract3596">
-        <img style = "opacity: 0.2" src="icons/table/dateContract.png" title="Нет данных">
-        </td>
-
-       
       
 
 <!-- ******************************  ФИНИШ Контракта   ********************************************* -->
     <td class="hidden_class_column" id = "js-FinishContract3596" >0</td>
 <!-- ******************************  ФИНИШ Контракта   ********************************************* -->
-      <td class="hidden_class_column" id = "js-dateFinishContract3596" width="60"></td>
-
 <!-- ******************************  ИСТОРИ КП  *************************************  -->
      <td><a name="3596" href="reports_show_history_kp.php?typeQuery=5&id_kp=3596" target="_blank"><img class="scale11" src="icons/table/history_kp.png" style = "opacity: 0.6" alt="История КП" title="История КП"></a></td> 
 <!-- ****************************** Адрес поставки   ********************************************* -->
@@ -1337,12 +1447,24 @@ function content_633c1dea96b5c8_43593828 (Smarty_Internal_Template $_smarty_tpl)
           
        <td>145И</td> 
          
+<!-- ***************************  парсер EXCEL файл  ********************************************** -->   
+
+          
+       <td><img style = "opacity: 0.2" src="icons/see_excel.png" alt="Excel"></td>
+         
+<! -- Проверяем есть ли файл с КП в формате ексель на сервере ************************************** -->
 
 <!-- ***************************  EXCEL файл  ********************************************** -->   
 
           
        <td><img style = "opacity: 0.2" src="icons/table/excel.png" alt="Excel"></td>
          
+<!-- *************************** NEW EXCEL файл  ********************************************** -->   
+
+          
+       <td><img style = "opacity: 0.2" src="icons/see_excel.png" alt="Excel"></td>
+         
+
 <! -- Проверяем есть ли файл с КП в формате ексель на сервере ************************************** -->
 <! -- Скачиваем счет -->
       <td><img style = "opacity: 0.2" src="icons/table/schet.png" alt="Excel"></td>
@@ -1352,7 +1474,7 @@ function content_633c1dea96b5c8_43593828 (Smarty_Internal_Template $_smarty_tpl)
          <td>2022-09-15</td>
                                       <!--   --> 
 <!-- ***************************  ИНН покупателя  ********************************************* -->        
-       <td width ="70" class="sell_comp hidden_class_column">
+       <td class="sell_comp hidden_class_column">
                               &nbsp
             
        </td>
@@ -1365,7 +1487,11 @@ function content_633c1dea96b5c8_43593828 (Smarty_Internal_Template $_smarty_tpl)
 
 <!-- ***************************  Наименование покупателя  ***************************************** -->
                           <td width ="150">ГорсДорСтрой</td>
+             <!-- ******************************  Icons konturLink   ***************************************************** -->
+
+                          <td><img class="" style = "opacity: 0.2" src="icons/kontur.png" alt="SeeLinkKontur"></td>
              
+
 <!-- ******************************  Icons Email  *********************************************** -->
       <td><a href= "mailer/login_mail.php?id=3597&InnCustomer=0" target="_blank"><img class="scale11" style = "opacity: 0.8" src="icons/table/email.png" alt="SeeKp"></a></td>
   <!-- ********************************** ВАЖНОСТЬ КП ************************************************ -->
@@ -1393,18 +1519,11 @@ function content_633c1dea96b5c8_43593828 (Smarty_Internal_Template $_smarty_tpl)
       <td class="hidden_class_column">0</td>
 
 <!-- ********************************** Дата окончания выполнения контракта ********************** -->
-        <td class="hidden_class_column" id = "js-dateContract3597">
-        <img style = "opacity: 0.2" src="icons/table/dateContract.png" title="Нет данных">
-        </td>
-
-       
       
 
 <!-- ******************************  ФИНИШ Контракта   ********************************************* -->
     <td class="hidden_class_column" id = "js-FinishContract3597" >0</td>
 <!-- ******************************  ФИНИШ Контракта   ********************************************* -->
-      <td class="hidden_class_column" id = "js-dateFinishContract3597" width="60"></td>
-
 <!-- ******************************  ИСТОРИ КП  *************************************  -->
      <td><a name="3597" href="reports_show_history_kp.php?typeQuery=5&id_kp=3597" target="_blank"><img class="scale11" src="icons/table/history_kp.png" style = "opacity: 0.6" alt="История КП" title="История КП"></a></td> 
 <!-- ****************************** Адрес поставки   ********************************************* -->
@@ -1420,12 +1539,24 @@ function content_633c1dea96b5c8_43593828 (Smarty_Internal_Template $_smarty_tpl)
           
        <td>4545</td> 
          
+<!-- ***************************  парсер EXCEL файл  ********************************************** -->   
+
+          
+       <td><img style = "opacity: 0.2" src="icons/see_excel.png" alt="Excel"></td>
+         
+<! -- Проверяем есть ли файл с КП в формате ексель на сервере ************************************** -->
 
 <!-- ***************************  EXCEL файл  ********************************************** -->   
 
           
        <td><img style = "opacity: 0.2" src="icons/table/excel.png" alt="Excel"></td>
          
+<!-- *************************** NEW EXCEL файл  ********************************************** -->   
+
+          
+       <td><img style = "opacity: 0.2" src="icons/see_excel.png" alt="Excel"></td>
+         
+
 <! -- Проверяем есть ли файл с КП в формате ексель на сервере ************************************** -->
 <! -- Скачиваем счет -->
       <td><img style = "opacity: 0.2" src="icons/table/schet.png" alt="Excel"></td>
@@ -1435,7 +1566,7 @@ function content_633c1dea96b5c8_43593828 (Smarty_Internal_Template $_smarty_tpl)
          <td>2022-09-08</td>
                                       <!--   --> 
 <!-- ***************************  ИНН покупателя  ********************************************* -->        
-       <td width ="70" class=" hidden_class_column">
+       <td class=" hidden_class_column">
                         <a href="show_comp_by_inn.php?inn=234" target="_blank">
                   234
             </a>
@@ -1450,7 +1581,11 @@ function content_633c1dea96b5c8_43593828 (Smarty_Internal_Template $_smarty_tpl)
 
 <!-- ***************************  Наименование покупателя  ***************************************** -->
                           <td width ="150">234234</td>
+             <!-- ******************************  Icons konturLink   ***************************************************** -->
+
+                          <td><img class="" style = "opacity: 0.2" src="icons/kontur.png" alt="SeeLinkKontur"></td>
              
+
 <!-- ******************************  Icons Email  *********************************************** -->
       <td><a href= "mailer/login_mail.php?id=3608&InnCustomer=234" target="_blank"><img class="scale11" style = "opacity: 0.8" src="icons/table/email.png" alt="SeeKp"></a></td>
   <!-- ********************************** ВАЖНОСТЬ КП ************************************************ -->
@@ -1478,18 +1613,11 @@ function content_633c1dea96b5c8_43593828 (Smarty_Internal_Template $_smarty_tpl)
       <td class="hidden_class_column">0</td>
 
 <!-- ********************************** Дата окончания выполнения контракта ********************** -->
-        <td class="hidden_class_column" id = "js-dateContract3608">
-        <img style = "opacity: 0.2" src="icons/table/dateContract.png" title="Нет данных">
-        </td>
-
-       
       
 
 <!-- ******************************  ФИНИШ Контракта   ********************************************* -->
     <td class="hidden_class_column" id = "js-FinishContract3608" >0</td>
 <!-- ******************************  ФИНИШ Контракта   ********************************************* -->
-      <td class="hidden_class_column" id = "js-dateFinishContract3608" width="60"></td>
-
 <!-- ******************************  ИСТОРИ КП  *************************************  -->
      <td><a name="3608" href="reports_show_history_kp.php?typeQuery=5&id_kp=3608" target="_blank"><img class="scale11" src="icons/table/history_kp.png" style = "opacity: 0.6" alt="История КП" title="История КП"></a></td> 
 <!-- ****************************** Адрес поставки   ********************************************* -->
@@ -1505,12 +1633,24 @@ function content_633c1dea96b5c8_43593828 (Smarty_Internal_Template $_smarty_tpl)
           
        <td>158Е</td> 
          
+<!-- ***************************  парсер EXCEL файл  ********************************************** -->   
+
+          
+       <td><img style = "opacity: 0.2" src="icons/see_excel.png" alt="Excel"></td>
+         
+<! -- Проверяем есть ли файл с КП в формате ексель на сервере ************************************** -->
 
 <!-- ***************************  EXCEL файл  ********************************************** -->   
 
           
        <td><img style = "opacity: 0.2" src="icons/table/excel.png" alt="Excel"></td>
          
+<!-- *************************** NEW EXCEL файл  ********************************************** -->   
+
+          
+       <td><img style = "opacity: 0.2" src="icons/see_excel.png" alt="Excel"></td>
+         
+
 <! -- Проверяем есть ли файл с КП в формате ексель на сервере ************************************** -->
 <! -- Скачиваем счет -->
       <td><img style = "opacity: 0.2" src="icons/table/schet.png" alt="Excel"></td>
@@ -1520,7 +1660,7 @@ function content_633c1dea96b5c8_43593828 (Smarty_Internal_Template $_smarty_tpl)
          <td>2022-03-09</td>
                                       <!--   --> 
 <!-- ***************************  ИНН покупателя  ********************************************* -->        
-       <td width ="70" class=" hidden_class_column">
+       <td class=" hidden_class_column">
                         <a href="show_comp_by_inn.php?inn=3525395322" target="_blank">
                   3525395322
             </a>
@@ -1535,8 +1675,14 @@ function content_633c1dea96b5c8_43593828 (Smarty_Internal_Template $_smarty_tpl)
 
 <!-- ***************************  Наименование покупателя  ***************************************** -->
             
-                      <td width ="150" ><a href="https://zakupki.kontur.ru/0830600001622000002" alt="konturLink" target="_blank">ООО «ПКТ СТРОЙ»</a></td>
+                      <td width ="150" ><a href="https://zakupki.kontur.ru/0830600001622000002" alt="konturLink" target="_blank">ООО «ПКТ СТРОЙ»</a>
+                      </td>
+             <!-- ******************************  Icons konturLink   ***************************************************** -->
+
+            
+                  <td><a href= "https://zakupki.kontur.ru/0830600001622000002" alt="konturLink" target="_blank"><img class="scale11" style = "opacity: 0.8" src="icons/kontur.png" alt="SeeLinkKontur"></a></td>
              
+
 <!-- ******************************  Icons Email  *********************************************** -->
       <td><a href= "mailer/login_mail.php?id=3208&InnCustomer=3525395322" target="_blank"><img class="scale11" style = "opacity: 0.8" src="icons/table/email.png" alt="SeeKp"></a></td>
   <!-- ********************************** ВАЖНОСТЬ КП ************************************************ -->
@@ -1566,15 +1712,10 @@ function content_633c1dea96b5c8_43593828 (Smarty_Internal_Template $_smarty_tpl)
 
 <!-- ********************************** Дата окончания выполнения контракта ********************** -->
       
-     <td class="hidden_class_column" id = "js-dateContract3208"><img class="scale11" style = "opacity: 0.8" src="icons/table/dateContract.png" title="Дата Закл :2022-02-28"></td>
-         
-      
 
 <!-- ******************************  ФИНИШ Контракта   ********************************************* -->
     <td class="hidden_class_column" id = "js-FinishContract3208" >0</td>
 <!-- ******************************  ФИНИШ Контракта   ********************************************* -->
-      <td class="hidden_class_column" id = "js-dateFinishContract3208" width="60">2022-11-23</td>
-
 <!-- ******************************  ИСТОРИ КП  *************************************  -->
      <td><a name="3208" href="reports_show_history_kp.php?typeQuery=5&id_kp=3208" target="_blank"><img class="scale11" src="icons/table/history_kp.png" style = "opacity: 0.6" alt="История КП" title="История КП"></a></td> 
 <!-- ****************************** Адрес поставки   ********************************************* -->
@@ -1590,12 +1731,24 @@ function content_633c1dea96b5c8_43593828 (Smarty_Internal_Template $_smarty_tpl)
           
        <td>153Е</td> 
          
+<!-- ***************************  парсер EXCEL файл  ********************************************** -->   
+
+          
+       <td><img style = "opacity: 0.2" src="icons/see_excel.png" alt="Excel"></td>
+         
+<! -- Проверяем есть ли файл с КП в формате ексель на сервере ************************************** -->
 
 <!-- ***************************  EXCEL файл  ********************************************** -->   
 
           
        <td><img style = "opacity: 0.2" src="icons/table/excel.png" alt="Excel"></td>
          
+<!-- *************************** NEW EXCEL файл  ********************************************** -->   
+
+          
+       <td><img style = "opacity: 0.2" src="icons/see_excel.png" alt="Excel"></td>
+         
+
 <! -- Проверяем есть ли файл с КП в формате ексель на сервере ************************************** -->
 <! -- Скачиваем счет -->
       <td><img style = "opacity: 0.2" src="icons/table/schet.png" alt="Excel"></td>
@@ -1605,7 +1758,7 @@ function content_633c1dea96b5c8_43593828 (Smarty_Internal_Template $_smarty_tpl)
          <td>2022-03-04</td>
                                       <!--   --> 
 <!-- ***************************  ИНН покупателя  ********************************************* -->        
-       <td width ="70" class=" hidden_class_column">
+       <td class=" hidden_class_column">
                         <a href="show_comp_by_inn.php?inn=6820036862" target="_blank">
                   6820036862
             </a>
@@ -1620,8 +1773,14 @@ function content_633c1dea96b5c8_43593828 (Smarty_Internal_Template $_smarty_tpl)
 
 <!-- ***************************  Наименование покупателя  ***************************************** -->
             
-                      <td width ="150" ><a href="https://zakupki.kontur.ru/0164200003022000082" alt="konturLink" target="_blank">ООО «РОТОР»</a></td>
+                      <td width ="150" ><a href="https://zakupki.kontur.ru/0164200003022000082" alt="konturLink" target="_blank">ООО «РОТОР»</a>
+                      </td>
+             <!-- ******************************  Icons konturLink   ***************************************************** -->
+
+            
+                  <td><a href= "https://zakupki.kontur.ru/0164200003022000082" alt="konturLink" target="_blank"><img class="scale11" style = "opacity: 0.8" src="icons/kontur.png" alt="SeeLinkKontur"></a></td>
              
+
 <!-- ******************************  Icons Email  *********************************************** -->
       <td><a href= "mailer/login_mail.php?id=3203&InnCustomer=6820036862" target="_blank"><img class="scale11" style = "opacity: 0.8" src="icons/table/email.png" alt="SeeKp"></a></td>
   <!-- ********************************** ВАЖНОСТЬ КП ************************************************ -->
@@ -1650,15 +1809,10 @@ function content_633c1dea96b5c8_43593828 (Smarty_Internal_Template $_smarty_tpl)
 
 <!-- ********************************** Дата окончания выполнения контракта ********************** -->
       
-     <td class="hidden_class_column" id = "js-dateContract3203"><img class="scale11" style = "opacity: 0.8" src="icons/table/dateContract.png" title="Дата Закл :2022-02-28"></td>
-         
-      
 
 <!-- ******************************  ФИНИШ Контракта   ********************************************* -->
     <td class="hidden_class_column" id = "js-FinishContract3203" >0</td>
 <!-- ******************************  ФИНИШ Контракта   ********************************************* -->
-      <td class="hidden_class_column" id = "js-dateFinishContract3203" width="60">2022-09-12</td>
-
 <!-- ******************************  ИСТОРИ КП  *************************************  -->
      <td><a name="3203" href="reports_show_history_kp.php?typeQuery=5&id_kp=3203" target="_blank"><img class="scale11" src="icons/table/history_kp.png" style = "opacity: 0.6" alt="История КП" title="История КП"></a></td> 
 <!-- ****************************** Адрес поставки   ********************************************* -->
@@ -1674,12 +1828,24 @@ function content_633c1dea96b5c8_43593828 (Smarty_Internal_Template $_smarty_tpl)
           
        <td>147Е</td> 
          
+<!-- ***************************  парсер EXCEL файл  ********************************************** -->   
+
+          
+       <td><img style = "opacity: 0.2" src="icons/see_excel.png" alt="Excel"></td>
+         
+<! -- Проверяем есть ли файл с КП в формате ексель на сервере ************************************** -->
 
 <!-- ***************************  EXCEL файл  ********************************************** -->   
 
           
        <td><img style = "opacity: 0.2" src="icons/table/excel.png" alt="Excel"></td>
          
+<!-- *************************** NEW EXCEL файл  ********************************************** -->   
+
+          
+       <td><img style = "opacity: 0.2" src="icons/see_excel.png" alt="Excel"></td>
+         
+
 <! -- Проверяем есть ли файл с КП в формате ексель на сервере ************************************** -->
 <! -- Скачиваем счет -->
       <td><img style = "opacity: 0.2" src="icons/table/schet.png" alt="Excel"></td>
@@ -1689,7 +1855,7 @@ function content_633c1dea96b5c8_43593828 (Smarty_Internal_Template $_smarty_tpl)
          <td>2022-03-03</td>
                                       <!--   --> 
 <!-- ***************************  ИНН покупателя  ********************************************* -->        
-       <td width ="70" class=" hidden_class_column">
+       <td class=" hidden_class_column">
                         <a href="show_comp_by_inn.php?inn=310259684507" target="_blank">
                   310259684507
             </a>
@@ -1704,8 +1870,14 @@ function content_633c1dea96b5c8_43593828 (Smarty_Internal_Template $_smarty_tpl)
 
 <!-- ***************************  Наименование покупателя  ***************************************** -->
             
-                      <td width ="150" ><a href="https://zakupki.kontur.ru/0126300029122000040" alt="konturLink" target="_blank">Меликов Сергей Еврасович</a></td>
+                      <td width ="150" ><a href="https://zakupki.kontur.ru/0126300029122000040" alt="konturLink" target="_blank">Меликов Сергей Еврасович</a>
+                      </td>
+             <!-- ******************************  Icons konturLink   ***************************************************** -->
+
+            
+                  <td><a href= "https://zakupki.kontur.ru/0126300029122000040" alt="konturLink" target="_blank"><img class="scale11" style = "opacity: 0.8" src="icons/kontur.png" alt="SeeLinkKontur"></a></td>
              
+
 <!-- ******************************  Icons Email  *********************************************** -->
       <td><a href= "mailer/login_mail.php?id=3197&InnCustomer=310259684507" target="_blank"><img class="scale11" style = "opacity: 0.8" src="icons/table/email.png" alt="SeeKp"></a></td>
   <!-- ********************************** ВАЖНОСТЬ КП ************************************************ -->
@@ -1734,15 +1906,10 @@ function content_633c1dea96b5c8_43593828 (Smarty_Internal_Template $_smarty_tpl)
 
 <!-- ********************************** Дата окончания выполнения контракта ********************** -->
       
-     <td class="hidden_class_column" id = "js-dateContract3197"><img class="scale11" style = "opacity: 0.8" src="icons/table/dateContract.png" title="Дата Закл :2022-02-28"></td>
-         
-      
 
 <!-- ******************************  ФИНИШ Контракта   ********************************************* -->
     <td class="hidden_class_column" id = "js-FinishContract3197" >0</td>
 <!-- ******************************  ФИНИШ Контракта   ********************************************* -->
-      <td class="hidden_class_column" id = "js-dateFinishContract3197" width="60">2022-06-30</td>
-
 <!-- ******************************  ИСТОРИ КП  *************************************  -->
      <td><a name="3197" href="reports_show_history_kp.php?typeQuery=5&id_kp=3197" target="_blank"><img class="scale11" src="icons/table/history_kp.png" style = "opacity: 0.6" alt="История КП" title="История КП"></a></td> 
 <!-- ****************************** Адрес поставки   ********************************************* -->
@@ -1755,25 +1922,34 @@ function content_633c1dea96b5c8_43593828 (Smarty_Internal_Template $_smarty_tpl)
                <td>19</td>
  <!-- ***************************  Номер КП  ********************************************* -->              
 
+                  <td><a href="open_excel/simplexlsx.php?LinkKp=EXCEL/№145Е от 03.03.2022 ООО ПитерСпортСтрой (КП к закупке№0157200000322000022) ООО ТД АНМАКС.xlsx" class=\"btn\" target=\"_blank\">145Е</a></td>
+                 
+<!-- ***************************  парсер EXCEL файл  ********************************************** -->   
+
+                      <td><a href="open_excel/simplexlsx.php?LinkKp=EXCEL/№145Е от 03.03.2022 ООО ПитерСпортСтрой (КП к закупке№0157200000322000022) ООО ТД АНМАКС.xlsx"><img class="scale11" style = "opacity: 0.8" src="icons/see_excel.png" alt="Excel"></a></td>
           
-       <td>145Е</td> 
-         
+<! -- Проверяем есть ли файл с КП в формате ексель на сервере ************************************** -->
 
 <!-- ***************************  EXCEL файл  ********************************************** -->   
 
+                      <td><a href="EXCEL/№145Е от 03.03.2022 ООО ПитерСпортСтрой (КП к закупке№0157200000322000022) ООО ТД АНМАКС.xlsx"><img class="scale11" style = "opacity: 0.8" src="icons/table/excel.png" alt="Excel"></a></td>
           
-       <td><img style = "opacity: 0.2" src="icons/table/excel.png" alt="Excel"></td>
-         
+<!-- *************************** NEW EXCEL файл  ********************************************** -->   
+
+                      <td><a href="open_excel/parce_excel_kp.php?LinkKp=EXCEL/№145Е от 03.03.2022 ООО ПитерСпортСтрой (КП к закупке№0157200000322000022) ООО ТД АНМАКС.xlsx"><img class="scale11" style = "opacity: 0.8" src="icons/see_excel.png" alt="Excel"></a></td>
+          
+
 <! -- Проверяем есть ли файл с КП в формате ексель на сервере ************************************** -->
 <! -- Скачиваем счет -->
-      <td><img style = "opacity: 0.2" src="icons/table/schet.png" alt="Excel"></td>
-        
+    
+   <td><a href = "xls_schet/make_schet.php?id=3195&inn=7810489590&LinkKp=EXCEL/№145Е от 03.03.2022 ООО ПитерСпортСтрой (КП к закупке№0157200000322000022) ООО ТД АНМАКС.xlsx"><img class="scale11" style = "opacity: 0.8" src="icons/table/schet.png" alt="Excel"></a></td>
+          
 
 <!-- ***************************  Дата КП  ************************************************* -->          
          <td>2022-03-03</td>
                                       <!--   --> 
 <!-- ***************************  ИНН покупателя  ********************************************* -->        
-       <td width ="70" class=" hidden_class_column">
+       <td class=" hidden_class_column">
                         <a href="show_comp_by_inn.php?inn=7810489590" target="_blank">
                   7810489590
             </a>
@@ -1788,8 +1964,14 @@ function content_633c1dea96b5c8_43593828 (Smarty_Internal_Template $_smarty_tpl)
 
 <!-- ***************************  Наименование покупателя  ***************************************** -->
             
-                      <td width ="150" ><a href="https://zakupki.kontur.ru/0157200000322000022" alt="konturLink" target="_blank">ООО «ПитерСпортСтрой»</a></td>
+                      <td width ="150" ><a href="https://zakupki.kontur.ru/0157200000322000022" alt="konturLink" target="_blank">ООО «ПитерСпортСтрой»</a>
+                      </td>
+             <!-- ******************************  Icons konturLink   ***************************************************** -->
+
+            
+                  <td><a href= "https://zakupki.kontur.ru/0157200000322000022" alt="konturLink" target="_blank"><img class="scale11" style = "opacity: 0.8" src="icons/kontur.png" alt="SeeLinkKontur"></a></td>
              
+
 <!-- ******************************  Icons Email  *********************************************** -->
       <td><a href= "mailer/login_mail.php?id=3195&InnCustomer=7810489590" target="_blank"><img class="scale11" style = "opacity: 0.8" src="icons/table/email.png" alt="SeeKp"></a></td>
   <!-- ********************************** ВАЖНОСТЬ КП ************************************************ -->
@@ -1818,15 +2000,10 @@ function content_633c1dea96b5c8_43593828 (Smarty_Internal_Template $_smarty_tpl)
 
 <!-- ********************************** Дата окончания выполнения контракта ********************** -->
       
-     <td class="hidden_class_column" id = "js-dateContract3195"><img class="scale11" style = "opacity: 0.8" src="icons/table/dateContract.png" title="Дата Закл :2022-02-28"></td>
-         
-      
 
 <!-- ******************************  ФИНИШ Контракта   ********************************************* -->
     <td class="hidden_class_column" id = "js-FinishContract3195" >0</td>
 <!-- ******************************  ФИНИШ Контракта   ********************************************* -->
-      <td class="hidden_class_column" id = "js-dateFinishContract3195" width="60">2022-08-26</td>
-
 <!-- ******************************  ИСТОРИ КП  *************************************  -->
      <td><a name="3195" href="reports_show_history_kp.php?typeQuery=5&id_kp=3195" target="_blank"><img class="scale11" src="icons/table/history_kp.png" style = "opacity: 0.6" alt="История КП" title="История КП"></a></td> 
 <!-- ****************************** Адрес поставки   ********************************************* -->
@@ -1842,12 +2019,24 @@ function content_633c1dea96b5c8_43593828 (Smarty_Internal_Template $_smarty_tpl)
           
        <td>114Е</td> 
          
+<!-- ***************************  парсер EXCEL файл  ********************************************** -->   
+
+          
+       <td><img style = "opacity: 0.2" src="icons/see_excel.png" alt="Excel"></td>
+         
+<! -- Проверяем есть ли файл с КП в формате ексель на сервере ************************************** -->
 
 <!-- ***************************  EXCEL файл  ********************************************** -->   
 
           
        <td><img style = "opacity: 0.2" src="icons/table/excel.png" alt="Excel"></td>
          
+<!-- *************************** NEW EXCEL файл  ********************************************** -->   
+
+          
+       <td><img style = "opacity: 0.2" src="icons/see_excel.png" alt="Excel"></td>
+         
+
 <! -- Проверяем есть ли файл с КП в формате ексель на сервере ************************************** -->
 <! -- Скачиваем счет -->
       <td><img style = "opacity: 0.2" src="icons/table/schet.png" alt="Excel"></td>
@@ -1857,7 +2046,7 @@ function content_633c1dea96b5c8_43593828 (Smarty_Internal_Template $_smarty_tpl)
          <td>2022-02-21</td>
                                       <!--   --> 
 <!-- ***************************  ИНН покупателя  ********************************************* -->        
-       <td width ="70" class=" hidden_class_column">
+       <td class=" hidden_class_column">
                         <a href="show_comp_by_inn.php?inn=5610004196" target="_blank">
                   5610004196
             </a>
@@ -1872,8 +2061,14 @@ function content_633c1dea96b5c8_43593828 (Smarty_Internal_Template $_smarty_tpl)
 
 <!-- ***************************  Наименование покупателя  ***************************************** -->
             
-                      <td width ="150" ><a href="https://zakupki.kontur.ru/1053600002422000001" alt="konturLink" target="_blank">АО «ОРЕНБУРГОБЛГРАЖДАНСТРОЙ»</a></td>
+                      <td width ="150" ><a href="https://zakupki.kontur.ru/1053600002422000001" alt="konturLink" target="_blank">АО «ОРЕНБУРГОБЛГРАЖДАНСТРОЙ»</a>
+                      </td>
+             <!-- ******************************  Icons konturLink   ***************************************************** -->
+
+            
+                  <td><a href= "https://zakupki.kontur.ru/1053600002422000001" alt="konturLink" target="_blank"><img class="scale11" style = "opacity: 0.8" src="icons/kontur.png" alt="SeeLinkKontur"></a></td>
              
+
 <!-- ******************************  Icons Email  *********************************************** -->
       <td><a href= "mailer/login_mail.php?id=3156&InnCustomer=5610004196" target="_blank"><img class="scale11" style = "opacity: 0.8" src="icons/table/email.png" alt="SeeKp"></a></td>
   <!-- ********************************** ВАЖНОСТЬ КП ************************************************ -->
@@ -1903,15 +2098,10 @@ function content_633c1dea96b5c8_43593828 (Smarty_Internal_Template $_smarty_tpl)
 
 <!-- ********************************** Дата окончания выполнения контракта ********************** -->
       
-     <td class="hidden_class_column" id = "js-dateContract3156"><img class="scale11" style = "opacity: 0.8" src="icons/table/dateContract.png" title="Дата Закл :2022-02-15"></td>
-         
-      
 
 <!-- ******************************  ФИНИШ Контракта   ********************************************* -->
     <td class="hidden_class_column" id = "js-FinishContract3156" >0</td>
 <!-- ******************************  ФИНИШ Контракта   ********************************************* -->
-      <td class="hidden_class_column" id = "js-dateFinishContract3156" width="60">2023-09-30</td>
-
 <!-- ******************************  ИСТОРИ КП  *************************************  -->
      <td><a name="3156" href="reports_show_history_kp.php?typeQuery=5&id_kp=3156" target="_blank"><img class="scale11" src="icons/table/history_kp.png" style = "opacity: 0.6" alt="История КП" title="История КП"></a></td> 
 <!-- ****************************** Адрес поставки   ********************************************* -->
@@ -1927,12 +2117,24 @@ function content_633c1dea96b5c8_43593828 (Smarty_Internal_Template $_smarty_tpl)
           
        <td>112Е</td> 
          
+<!-- ***************************  парсер EXCEL файл  ********************************************** -->   
+
+          
+       <td><img style = "opacity: 0.2" src="icons/see_excel.png" alt="Excel"></td>
+         
+<! -- Проверяем есть ли файл с КП в формате ексель на сервере ************************************** -->
 
 <!-- ***************************  EXCEL файл  ********************************************** -->   
 
           
        <td><img style = "opacity: 0.2" src="icons/table/excel.png" alt="Excel"></td>
          
+<!-- *************************** NEW EXCEL файл  ********************************************** -->   
+
+          
+       <td><img style = "opacity: 0.2" src="icons/see_excel.png" alt="Excel"></td>
+         
+
 <! -- Проверяем есть ли файл с КП в формате ексель на сервере ************************************** -->
 <! -- Скачиваем счет -->
       <td><img style = "opacity: 0.2" src="icons/table/schet.png" alt="Excel"></td>
@@ -1942,7 +2144,7 @@ function content_633c1dea96b5c8_43593828 (Smarty_Internal_Template $_smarty_tpl)
          <td>2022-02-16</td>
                                       <!--   --> 
 <!-- ***************************  ИНН покупателя  ********************************************* -->        
-       <td width ="70" class=" hidden_class_column">
+       <td class=" hidden_class_column">
                         <a href="show_comp_by_inn.php?inn=7736279690" target="_blank">
                   7736279690
             </a>
@@ -1957,8 +2159,14 @@ function content_633c1dea96b5c8_43593828 (Smarty_Internal_Template $_smarty_tpl)
 
 <!-- ***************************  Наименование покупателя  ***************************************** -->
             
-                      <td width ="150" ><a href="https://zakupki.kontur.ru/0149200002321009766" alt="konturLink" target="_blank">ООО «ТОРИОН»</a></td>
+                      <td width ="150" ><a href="https://zakupki.kontur.ru/0149200002321009766" alt="konturLink" target="_blank">ООО «ТОРИОН»</a>
+                      </td>
+             <!-- ******************************  Icons konturLink   ***************************************************** -->
+
+            
+                  <td><a href= "https://zakupki.kontur.ru/0149200002321009766" alt="konturLink" target="_blank"><img class="scale11" style = "opacity: 0.8" src="icons/kontur.png" alt="SeeLinkKontur"></a></td>
              
+
 <!-- ******************************  Icons Email  *********************************************** -->
       <td><a href= "mailer/login_mail.php?id=3154&InnCustomer=7736279690" target="_blank"><img class="scale11" style = "opacity: 0.8" src="icons/table/email.png" alt="SeeKp"></a></td>
   <!-- ********************************** ВАЖНОСТЬ КП ************************************************ -->
@@ -1987,15 +2195,10 @@ function content_633c1dea96b5c8_43593828 (Smarty_Internal_Template $_smarty_tpl)
 
 <!-- ********************************** Дата окончания выполнения контракта ********************** -->
       
-     <td class="hidden_class_column" id = "js-dateContract3154"><img class="scale11" style = "opacity: 0.8" src="icons/table/dateContract.png" title="Дата Закл :2022-03-02"></td>
-         
-      
 
 <!-- ******************************  ФИНИШ Контракта   ********************************************* -->
     <td class="hidden_class_column" id = "js-FinishContract3154" >0</td>
 <!-- ******************************  ФИНИШ Контракта   ********************************************* -->
-      <td class="hidden_class_column" id = "js-dateFinishContract3154" width="60">2024-12-20</td>
-
 <!-- ******************************  ИСТОРИ КП  *************************************  -->
      <td><a name="3154" href="reports_show_history_kp.php?typeQuery=5&id_kp=3154" target="_blank"><img class="scale11" src="icons/table/history_kp.png" style = "opacity: 0.6" alt="История КП" title="История КП"></a></td> 
 <!-- ****************************** Адрес поставки   ********************************************* -->

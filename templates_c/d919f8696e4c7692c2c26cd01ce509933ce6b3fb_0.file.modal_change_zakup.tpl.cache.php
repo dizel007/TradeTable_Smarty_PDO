@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.1.0, created on 2022-10-04 14:56:17
+/* Smarty version 4.1.0, created on 2022-10-12 16:18:41
   from 'C:\xampp\htdocs\TradeTable_Smarty_PDO\templates\modal\modal_change_zakup.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.1.0',
-  'unifunc' => 'content_633c2d71c7a0c0_77303667',
+  'unifunc' => 'content_6346beb1d24d33_43675076',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,9 +20,9 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_633c2d71c7a0c0_77303667 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6346beb1d24d33_43675076 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\xampp\\htdocs\\TradeTable_Smarty_PDO\\libs\\plugins\\function.html_options.php','function'=>'smarty_function_html_options',),));
-$_smarty_tpl->compiled->nocache_hash = '1851076860633c2d71c723c0_11266238';
+$_smarty_tpl->compiled->nocache_hash = '10609922146346beb1d20eb0_08966665';
 ?>
   <div class="dm-overlay js-modal " data-modal = "write_comment">
      <div class="dm-table">

@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.1.0, created on 2022-10-04 14:50:02
+/* Smarty version 4.1.0, created on 2022-10-12 16:18:41
   from 'C:\xampp\htdocs\TradeTable_Smarty_PDO\templates\_include_modal.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.1.0',
-  'unifunc' => 'content_633c1dea861b86_44224455',
+  'unifunc' => 'content_6346beb1c22ff2_40202066',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -18,7 +18,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     '662f3fbd71c8786d1996b8e4ab7d17cf2d8d0594' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TradeTable_Smarty_PDO\\templates\\modal\\modal_insert_phone.tpl',
-      1 => 1664864092,
+      1 => 1664886070,
       2 => 'file',
     ),
     'cd5e441338f8f31e52ac79de07ed17ae0b3cf1fb' => 
@@ -48,7 +48,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   ),
   'cache_lifetime' => 120,
 ),true)) {
-function content_633c1dea861b86_44224455 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6346beb1c22ff2_40202066 (Smarty_Internal_Template $_smarty_tpl) {
 ?>   <!-- модальные окна для вставки телефонов -->
  <!-- модальные окна для изменения телефонов -->
  <!-- модальные окна для вставки email -->

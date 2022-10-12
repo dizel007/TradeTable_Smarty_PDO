@@ -73,4 +73,3 @@ require_once "smarty_docs/full_get.php";
 $get_FinishContract = 1; //   когда выводим по ID и ИНН то выводим и закрытые КП
 require_once "smarty_docs/setup_param_main_table_2.php";
 $smarty->display('main_table.tpl');
-$smarty->display('footer.tpl');

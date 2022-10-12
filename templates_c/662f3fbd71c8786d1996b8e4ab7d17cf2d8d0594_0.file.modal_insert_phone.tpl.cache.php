@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.1.0, created on 2022-10-04 14:56:17
+/* Smarty version 4.1.0, created on 2022-10-12 16:18:41
   from 'C:\xampp\htdocs\TradeTable_Smarty_PDO\templates\modal\modal_insert_phone.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.1.0',
-  'unifunc' => 'content_633c2d71b93916_40506804',
+  'unifunc' => 'content_6346beb1bb59d9_55176967',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,8 +20,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_633c2d71b93916_40506804 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->compiled->nocache_hash = '1346947783633c2d71b8fa90_69936698';
+function content_6346beb1bb59d9_55176967 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->compiled->nocache_hash = '16375306336346beb1badcd5_19868154';
 ?>
   <?php if (($_smarty_tpl->tpl_vars['typeQuery']->value == 309)) {?>
   <div class="dm-overlay" id="win309">

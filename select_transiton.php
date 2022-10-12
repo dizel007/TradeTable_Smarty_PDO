@@ -1,7 +1,7 @@
 <?php
 // выбираем куда переходить после обновденни данных о компании
-isset($_GET['id'])?$id= $_GET['id']:$id ="";
-isset($_GET['inn'])?$inn= $_GET['inn']:$inn ="";
+isset($_GET['id'])?$id= $_GET['id']:$id ='';
+isset($_GET['inn'])?$inn= $_GET['inn']:$inn ='';
 
 
 

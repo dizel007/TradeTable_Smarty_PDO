@@ -9,6 +9,7 @@ $(document).ready(function($){
     id = event.target.id;
   document.getElementById("textarea-Comment").value=""; // Всегда чистим ТехтАриа в комментах при открытии окна
   // document.getElementById("FinishContract").value="";
+  // alert ('ID = '+id);
   $.ajax(  {
           url: "functions/get_one_item.php",
           method: 'POST',             /* Метод передачи (post или get) */
@@ -35,7 +36,7 @@ $(document).ready(function($){
                       procent_work = String(obj[0].procent_work);
                       dateFinishContract = String(obj[0].dateFinishContract);
 
-
+    
 // alert ('FIRS = '+FinishContract);
       document.getElementById("js-new-modal-id").innerHTML = id;
       document.getElementById('js-new-modal-id').value = id;

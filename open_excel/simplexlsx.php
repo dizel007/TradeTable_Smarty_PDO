@@ -81,4 +81,3 @@ $stop=0;  // переменная чтобы отсечь все после та
 	echo "<br><b>".$oplata."</b><br>";
 	echo "<b>".$makeTime."</b><br>";
 	echo "<b>".$Dostavka."</b><br>";
-;;

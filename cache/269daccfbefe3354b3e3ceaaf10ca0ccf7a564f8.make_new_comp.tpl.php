@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.1.0, created on 2022-10-04 13:50:13
+/* Smarty version 4.1.0, created on 2022-10-12 12:16:39
   from 'C:\xampp\htdocs\TradeTable_Smarty_PDO\templates\make_new_comp.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.1.0',
-  'unifunc' => 'content_633c1df5022c63_89914121',
+  'unifunc' => 'content_6346940786afa6_92040664',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -36,7 +36,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   ),
   'cache_lifetime' => 120,
 ),true)) {
-function content_633c1df5022c63_89914121 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6346940786afa6_92040664 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <html lang="ru">
 
@@ -79,7 +79,7 @@ function content_633c1df5022c63_89914121 (Smarty_Internal_Template $_smarty_tpl)
 
      <section class="block">
     <p><strong>Введите наименование компании или ИНН</strong></p>
-    <input id="party" name="party" type="text" value="">
+    <input id="party" name="party" type="text" value="43345345345">
     </div>  
   </section> 
 

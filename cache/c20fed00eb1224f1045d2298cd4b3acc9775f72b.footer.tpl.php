@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.1.0, created on 2022-10-04 14:33:33
+/* Smarty version 4.1.0, created on 2022-10-12 14:30:43
   from 'C:\xampp\htdocs\TradeTable_Smarty_PDO\templates\footer.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.1.0',
-  'unifunc' => 'content_633c1a0d454490_77797179',
+  'unifunc' => 'content_6346a563821778_75348528',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -24,7 +24,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   ),
   'cache_lifetime' => 120,
 ),true)) {
-function content_633c1a0d454490_77797179 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6346a563821778_75348528 (Smarty_Internal_Template $_smarty_tpl) {
 ?> <!-- модальные окна для правки по ИНН  -->
 
  <!-- модальные окна для вставки телефонов -->
@@ -38,7 +38,7 @@ function content_633c1a0d454490_77797179 (Smarty_Internal_Template $_smarty_tpl)
 
   <div>
     <select id = "js-id" name="id">
-      <option id ="js-new-modal-id" value ="$id">3640</option>
+      <option id ="js-new-modal-id" value ="$id">3635</option>
             
     </select>
   </div>
